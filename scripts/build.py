@@ -38,15 +38,15 @@ def main():
     start = time.time()
     base = Path(__file__).parent
 
-    install_deps(base / "requirements.txt")
+    install_deps(base / ".." / "requirements.txt")
 
-    gen_script = base / "src" / "generate_images.py"
+    gen_script = base / ".." / "src" / "generate_images.py"
     if not gen_script.exists():
         print(f"Error: {gen_script} not found"); sys.exit(1)
     if not run_cmd([sys.executable, str(gen_script)], "Image generation"):
         sys.exit(1)
 
-    latex_dir = base / "latex"
+    latex_dir = base / ".." / "latex"
     main_tex = latex_dir / "main.tex"
     if not main_tex.exists():
         print(f"Error: {main_tex} not found"); sys.exit(1)
