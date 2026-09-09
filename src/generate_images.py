@@ -26,7 +26,8 @@ def make_directories():
         os.makedirs(dir, exist_ok=True)
 
 # Matplotlib style
-plt.style.use("paper.mplstyle")
+STYLE_PATH = os.path.join(script_dir, "paper.mplstyle")
+plt.style.use(STYLE_PATH)
 pt = 1./72.27 # Hundreds of years of history... 72.27 points to an inch.
 jour_sizes = {"PRD": {"onecol": 246.*pt, "twocol": 510.*pt},
             "CQG": {"onecol": 374.*pt}, # CQG is only one column
@@ -609,9 +610,9 @@ def generate_Hayward():
 # Generate all plots
 def main():
     make_directories()
-    # generate_intensity_profiles()
-    # generate_SV()
-    # generate_Hayward()
+    generate_intensity_profiles()
+    generate_SV()
+    generate_Hayward()
 
 
 if __name__=='__main__':
