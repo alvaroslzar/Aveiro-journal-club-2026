@@ -471,7 +471,7 @@ def generate_Hayward():
     # We manually add bs for the inner critical impact parameter (bc1)
     bc1 = b_crits[0]
     bs_inner_lensed = np.linspace(bc1-1e-2, bc1+1e-2, 100)
-    bs_inner_p_ring = np.linspace(bc1-1e-4, bc1+1e-4, 3000)
+    bs_inner_p_ring = np.linspace(bc1-1e-4, bc1+1e-4, 500)
     # bs for the outer one
     b_crits = b_crits[1:]
     rings_Hayward = find_rings_list(b_crits, Hayward_kwargs)
