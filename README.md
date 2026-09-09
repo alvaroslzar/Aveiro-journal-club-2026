@@ -46,15 +46,18 @@ tree -A -I "*.pdf|*.bbl|*.synctex.gz"
 
 Then, paste the output here
 ```bash
-.
 ├── LICENSE
 ├── README.md
-├── build.py
 ├── latex
 │   ├── figures
 │   ├── main.tex
 │   └── references.bib
 ├── requirements.txt
+├── scripts
+│   ├── build.py
+│   └── setup-nb-filter.sh
 └── src
-    └── generate_images.py
+    ├── generate_images.py
+    ├── paper.mplstyle
+    └── ray_tracing_WH.ipynb
 ```
