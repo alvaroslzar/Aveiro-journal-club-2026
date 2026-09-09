@@ -6,11 +6,13 @@ https://github.com/alvaroslzar
 -->
 
 
-# Draft title
+# Aveiro journal club 2026
 
-This is the repo for the project `Draft title`
+This is the repo for the project `Aveiro-journal-club-2026`
 
-Authors: `author_name_1`, `author_name_2`, etc.
+Authors: S. Noriji, S. D. Odintsov, D. Sáez-Chillón Gómez and Á. Salazar Cuadros (speaker).
+
+Contribution: Horizon singularity, energy conditions and shadows in time-dependent and spherically symmetric spacetime [	arXiv:2608.15740 [gr-qc]](https://arxiv.org/abs/2608.15740).
 
 
 ## Setup

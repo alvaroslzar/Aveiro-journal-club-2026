@@ -2,3 +2,4 @@ numpy
 matplotlib
 ipykernel>=6
 nbconvert>=7
+gravityp==0.1.2
