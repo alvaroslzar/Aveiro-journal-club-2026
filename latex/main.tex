@@ -952,497 +952,497 @@ The above results indicate that the thermodynamics of the Simpson-Visser black b
 
 \section{Shadows of non-stationary wormholes}\label{shadows-non-stationary-wormholes}
 
-% As a final section, we use the so-called ray-tracing method \cite{Gralla:2019xty} to study the optical appearance of some of the examples of dynamical spacetimes previously considered, namely the Simpson-Visser and Hayward wormholes.
-% All of these examples are particular cases of the more general metric~\eqref{ssWHmtrc}, and they are described by line elements of the form
-% \begin{align}
-% \label{eq:metric_ray_tracing}
-% ds^2 = - \e^{2\nu (r)} dt^2 + \e^{-2\nu (r)} dr^2 + \e^{2\xi (t,r)} \left( d\vartheta^2 + \sin^2\vartheta \, d\varphi^2 \right)\, .
-% \end{align}
-% The areal radius function $\e^\xi$ encodes the time-dependence, and either takes the form
-% \begin{align}
-% \label{eq:areal_case_1}
-% \e^\xi = \sqrt{r^2+{\rt}^2}+\Xi_{02}(t)
-% \end{align}
-% or, alternatively,
-% \begin{align}
-% \label{eq:areal_case_2}
-% \e^\xi = \sqrt{r^2+{\rt}^2}+\e^{2\nu}\Xi_{02}(t)\, .
-% \end{align}
+As a final section, we use the so-called ray-tracing method \cite{Gralla:2019xty} to study the optical appearance of some of the examples of dynamical spacetimes previously considered, namely the Simpson-Visser and Hayward wormholes.
+All of these examples are particular cases of the more general metric~\eqref{ssWHmtrc}, and they are described by line elements of the form
+\begin{align}
+\label{eq:metric_ray_tracing}
+ds^2 = - \e^{2\nu (r)} dt^2 + \e^{-2\nu (r)} dr^2 + \e^{2\xi (t,r)} \left( d\vartheta^2 + \sin^2\vartheta \, d\varphi^2 \right)\, .
+\end{align}
+The areal radius function $\e^\xi$ encodes the time-dependence, and either takes the form
+\begin{align}
+\label{eq:areal_case_1}
+\e^\xi = \sqrt{r^2+{\rt}^2}+\Xi_{02}(t)
+\end{align}
+or, alternatively,
+\begin{align}
+\label{eq:areal_case_2}
+\e^\xi = \sqrt{r^2+{\rt}^2}+\e^{2\nu}\Xi_{02}(t)\, .
+\end{align}
 
-% We now write the equations of motion for null geodesics.
-% Due to spherical symmetry, we may restrict ourselves to the equatorial plane $\vartheta=\pi/2$ with no loss of generality.
-% Then, the equations for coordinates $t$ and $\varphi$ read
-% \begin{align}
-% \frac{d}{d\sigma}\left(\e^{2\nu} k^t \right) + \frac{(k^\varphi)^2}{2}\frac{\partial}{\partial t}\left( \e^{2\xi} \right) = 0\, ,
-% \quad
-% \frac{d}{d\sigma}\left( \e^{2\xi}k^\varphi \right) = 0\, ,
-% \end{align}
-% where $\sigma$ is an affine parameter along the null geodesic $x^\mu(\sigma)$ with $k^\mu = dx^\mu/d\sigma$ being its tangent null vector.
-% We further consider the adiabatic approximation~\eqref{adabatic} such that time changes in the geometry can be neglected when light rays travel along geodesics.
-% In this regime, the partial derivative term in the left equation vanishes, and we get the two conserved quantities
-% \begin{align}
-% \e^{2\nu} k^t = E\, ,
-% \quad
-% \e^{2\xi} k^\varphi = L\, .
-% \end{align}
-% Thus, in what follows, we shall treat $\Xi_{02}(t)\equiv\Xi$ as an additional parameter on which metric functions may depend.
-% The motion is then described by the first integral
-% \begin{align}
-% \left(\frac{d r}{d\sigma}\right)^2 = \frac{1}{b^2} - V(r)\, ,
-% \end{align}
-% where we have re-parametrized the affine parameter $\sigma\rightarrow L\sigma$ to absorb the $L^2$ factor.
-% This equation only depends on the so-called impact parameter $b=L/E$ and the effective potential $V(r)=e^{2\nu-2\xi}$.
+We now write the equations of motion for null geodesics.
+Due to spherical symmetry, we may restrict ourselves to the equatorial plane $\vartheta=\pi/2$ with no loss of generality.
+Then, the equations for coordinates $t$ and $\varphi$ read
+\begin{align}
+\frac{d}{d\sigma}\left(\e^{2\nu} k^t \right) + \frac{(k^\varphi)^2}{2}\frac{\partial}{\partial t}\left( \e^{2\xi} \right) = 0\, ,
+\quad
+\frac{d}{d\sigma}\left( \e^{2\xi}k^\varphi \right) = 0\, ,
+\end{align}
+where $\sigma$ is an affine parameter along the null geodesic $x^\mu(\sigma)$ with $k^\mu = dx^\mu/d\sigma$ being its tangent null vector.
+We further consider the adiabatic approximation~\eqref{adabatic} such that time changes in the geometry can be neglected when light rays travel along geodesics.
+In this regime, the partial derivative term in the left equation vanishes, and we get the two conserved quantities
+\begin{align}
+\e^{2\nu} k^t = E\, ,
+\quad
+\e^{2\xi} k^\varphi = L\, .
+\end{align}
+Thus, in what follows, we shall treat $\Xi_{02}(t)\equiv\Xi$ as an additional parameter on which metric functions may depend.
+The motion is then described by the first integral
+\begin{align}
+\left(\frac{d r}{d\sigma}\right)^2 = \frac{1}{b^2} - V(r)\, ,
+\end{align}
+where we have re-parametrized the affine parameter $\sigma\rightarrow L\sigma$ to absorb the $L^2$ factor.
+This equation only depends on the so-called impact parameter $b=L/E$ and the effective potential $V(r)=e^{2\nu-2\xi}$.
 
-% The equation for the trajectory of null geodesics reads
-% \begin{align}
-% \frac{d\varphi}{dr} = \pm \frac{b\ \e^{-\xi}}{\sqrt{\e^{2\xi}-b^2 \e^{2\nu}}} \, ,
-% \label{eq:trajectory}
-% \end{align}
-% where the plus (minus) sign corresponds to outgoing (incoming) light rays.
+The equation for the trajectory of null geodesics reads
+\begin{align}
+\frac{d\varphi}{dr} = \pm \frac{b\ \e^{-\xi}}{\sqrt{\e^{2\xi}-b^2 \e^{2\nu}}} \, ,
+\label{eq:trajectory}
+\end{align}
+where the plus (minus) sign corresponds to outgoing (incoming) light rays.
 
-% We model the accretion disk as being geometrically and optically thin and lying on the equatorial plane.
-% We further assume that the emission is isotropic with specific intensity $I^\mathrm{em}_\omega$ in its rest frame; and that it is static, i.e., the redshift is only due to gravitational redshift.
-% Since $I^\mathrm{em}_\omega/\omega^3$ is conserved along any given geodesic, the observed specific intensity is given by $I^\mathrm{ob}_{\omega'} = (\omega' /\omega)^3 I^\mathrm{em}_\omega = \e^{3\nu}I^\mathrm{em}_\omega$. 
-% The integrated observed intensity $I^\mathrm{ob} = \int I^\mathrm{ob}_{\omega'} d\omega'$ is then given by the sum of all contributions for $m$ intersections with the accretion disk
-% \begin{align}
-% I^\mathrm{ob}(b) = \sum_{m=1}^\infty \left. \e^{4\nu(r)}I^\mathrm{em}(r)\right|_{r=r_m(b)}\, .
-% \label{eq:observed-intensity}
-% \end{align}
-% The functions $r_m(b)$ are dubbed \textit{transfer functions}, and give the radial coordinate $r$ of the $m$-th intersection with the accretion disk for a geodesic with impact parameter $b$.
-% Despite intersecting an arbitrarily large number of times, light rays with large $m$ contribute negligibly to the total intensity \cite{Gralla:2019xty, Bisnovatyi-Kogan:2022ujt}.
-% Therefore, we only consider up to the first three orders of $m$, which we dub as direct ($m=1$), lensed ($m=2$) and photon ring ($m=3$) emission.
+We model the accretion disk as being geometrically and optically thin and lying on the equatorial plane.
+We further assume that the emission is isotropic with specific intensity $I^\mathrm{em}_\omega$ in its rest frame; and that it is static, i.e., the redshift is only due to gravitational redshift.
+Since $I^\mathrm{em}_\omega/\omega^3$ is conserved along any given geodesic, the observed specific intensity is given by $I^\mathrm{ob}_{\omega'} = (\omega' /\omega)^3 I^\mathrm{em}_\omega = \e^{3\nu}I^\mathrm{em}_\omega$. 
+The integrated observed intensity $I^\mathrm{ob} = \int I^\mathrm{ob}_{\omega'} d\omega'$ is then given by the sum of all contributions for $m$ intersections with the accretion disk
+\begin{align}
+I^\mathrm{ob}(b) = \sum_{m=1}^\infty \left. \e^{4\nu(r)}I^\mathrm{em}(r)\right|_{r=r_m(b)}\, .
+\label{eq:observed-intensity}
+\end{align}
+The functions $r_m(b)$ are dubbed \textit{transfer functions}, and give the radial coordinate $r$ of the $m$-th intersection with the accretion disk for a geodesic with impact parameter $b$.
+Despite intersecting an arbitrarily large number of times, light rays with large $m$ contribute negligibly to the total intensity \cite{Gralla:2019xty, Bisnovatyi-Kogan:2022ujt}.
+Therefore, we only consider up to the first three orders of $m$, which we dub as direct ($m=1$), lensed ($m=2$) and photon ring ($m=3$) emission.
 
-% To model the emission, we will use the parametrised family of SU models~\cite{Gralla:2020srx, Paugnat:2022qzy, Cardenas-Avendano:2022csp}, whose expression is given by
-% \begin{align}
-%  I^\mathrm{em}(r;\mu,\sigma,\beta) = \frac{\exp \left( -\frac{1}{2}\left(\beta+\arcsinh\left(\frac{r-\mu}{\sigma}\right)\right)^2 \right)}{ \sqrt{(r-\mu)^2+\sigma^2} }\, .
-% \label{eq:su-model}
-% \end{align}
-% In these emission profiles, $\mu$, $\sigma$ and $\beta$ parametrise the location of the emission peak, its width and the asymmetry of the distribution, respectively.
-% In all the considered examples, we will assume that $\mu$ coincides with the inner edge $\ri$ of the accretion disk, which is placed at the (outer) event horizon for a black hole or at the throat for a horizonless wormhole.
-% For an SV black hole, the event horizon is given by $\rhor=\sqrt{4M^2-{\rt}^2}$ if $\rt\leq2M$, while the throat is at $r=0$.
-% On the other hand, a Hayward black hole has its outer event horizon at~\eqref{rpm} with the plus sign if condition~\eqref{condition2} is verified, whereas the throat of a Hayward wormhole is also at $r=0$.
+To model the emission, we will use the parametrised family of SU models~\cite{Gralla:2020srx, Paugnat:2022qzy, Cardenas-Avendano:2022csp}, whose expression is given by
+\begin{align}
+ I^\mathrm{em}(r;\mu,\sigma,\beta) = \frac{\exp \left( -\frac{1}{2}\left(\beta+\arcsinh\left(\frac{r-\mu}{\sigma}\right)\right)^2 \right)}{ \sqrt{(r-\mu)^2+\sigma^2} }\, .
+\label{eq:su-model}
+\end{align}
+In these emission profiles, $\mu$, $\sigma$ and $\beta$ parametrise the location of the emission peak, its width and the asymmetry of the distribution, respectively.
+In all the considered examples, we will assume that $\mu$ coincides with the inner edge $\ri$ of the accretion disk, which is placed at the (outer) event horizon for a black hole or at the throat for a horizonless wormhole.
+For an SV black hole, the event horizon is given by $\rhor=\sqrt{4M^2-{\rt}^2}$ if $\rt\leq2M$, while the throat is at $r=0$.
+On the other hand, a Hayward black hole has its outer event horizon at~\eqref{rpm} with the plus sign if condition~\eqref{condition2} is verified, whereas the throat of a Hayward wormhole is also at $r=0$.
 
-% \begin{figure}[ht!]
-% \includegraphics{figures/Emission_models.pdf}
-% \caption{
-% SU emission profiles~\eqref{eq:su-model} used for each example, normalised with respect to the maximum emitted intensity $I_0$.
-% For a SV black hole with $\rt=1.5M$ (blue) the value of $\mu$ is set at $\ri=\sqrt{7}/2M\approx1.32M$, for Hayward black hole with $\gamma=0.5M$ (orange) we have $\ri\approx1.85M$, whilst for both SV and Hayward wormholes (green) $\mu=\ri=0$.
-% The remaining parameters have been set to $\sigma=0.5M$ and $\beta=-2$ in all cases. 
-% }
-% \label{fig:emission-models}
-% \end{figure}
+\begin{figure}[ht!]
+\includegraphics{figures/Emission_models.pdf}
+\caption{
+SU emission profiles~\eqref{eq:su-model} used for each example, normalised with respect to the maximum emitted intensity $I_0$.
+For a SV black hole with $\rt=1.5M$ (blue) the value of $\mu$ is set at $\ri=\sqrt{7}/2M\approx1.32M$, for Hayward black hole with $\gamma=0.5M$ (orange) we have $\ri\approx1.85M$, whilst for both SV and Hayward wormholes (green) $\mu=\ri=0$.
+The remaining parameters have been set to $\sigma=0.5M$ and $\beta=-2$ in all cases. 
+}
+\label{fig:emission-models}
+\end{figure}
 
-% %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
 
-% \subsection{Shadows of dynamical Simpson-Visser spacetime}\label{shadows-SV}
+\subsection{Shadows of dynamical Simpson-Visser spacetime}\label{shadows-SV}
 
-% We now study the Simpson-Visser black bounce with $\e^{2\nu}$ given by Eq.~\eqref{SVmetric} and $\e^{2\xi}$ in Eq.~\eqref{eq:areal_case_1}.
-% The optical appearance of this black bounce has already been studied in \cite{Guerrero:2021ues}, so it gives a good basis for investigating the effect of an adiabatic temporal evolution on its shadow.
-% The explicit expression for the potential is
-% \begin{align}
-% V(r) = \left( \sqrt{r^2+{\rt}^2}+\Xi \right)^{-2}\left( 1-\frac{2M}{\sqrt{r^2+{\rt}^2}} \right)\, .
-% \end{align}
-% Just like the static case \cite{Simpson:2018tsi}, the potential only depends on $\rt$ through the radial function $R(r)=\sqrt{r^2+{\rt}^2}$, so the value of the critical impact parameter $b_c$ will not depend on $\rt$.
-% The shape of this potential is depicted in FIG.~\ref{fig:SV_potential} for two qualitatively different geometries (black hole with $\rt=1.5M$, traversable wormhole with $\rt=2.5M$) and different choices for $\Xi$.
+We now study the Simpson-Visser black bounce with $\e^{2\nu}$ given by Eq.~\eqref{SVmetric} and $\e^{2\xi}$ in Eq.~\eqref{eq:areal_case_1}.
+The optical appearance of this black bounce has already been studied in \cite{Guerrero:2021ues}, so it gives a good basis for investigating the effect of an adiabatic temporal evolution on its shadow.
+The explicit expression for the potential is
+\begin{align}
+V(r) = \left( \sqrt{r^2+{\rt}^2}+\Xi \right)^{-2}\left( 1-\frac{2M}{\sqrt{r^2+{\rt}^2}} \right)\, .
+\end{align}
+Just like the static case \cite{Simpson:2018tsi}, the potential only depends on $\rt$ through the radial function $R(r)=\sqrt{r^2+{\rt}^2}$, so the value of the critical impact parameter $b_c$ will not depend on $\rt$.
+The shape of this potential is depicted in FIG.~\ref{fig:SV_potential} for two qualitatively different geometries (black hole with $\rt=1.5M$, traversable wormhole with $\rt=2.5M$) and different choices for $\Xi$.
 
-% \begin{figure}[ht!]
-% \includegraphics[width=\textwidth]{figures/SV/SV_potential.pdf}
-% \caption{Simpson-Visser potential for $\rt=1.5M$ (left) and $\rt=2.5M$ (right) for different values of the parameter $\Xi$.
-% The left panel corresponds to a black hole, whereas the right panel corresponds to a traversable wormhole.}
-% \label{fig:SV_potential}
-% \end{figure}
+\begin{figure}[ht!]
+\includegraphics[width=\textwidth]{figures/SV/SV_potential.pdf}
+\caption{Simpson-Visser potential for $\rt=1.5M$ (left) and $\rt=2.5M$ (right) for different values of the parameter $\Xi$.
+The left panel corresponds to a black hole, whereas the right panel corresponds to a traversable wormhole.}
+\label{fig:SV_potential}
+\end{figure}
 
-% The critical points of the potential satisfy the following condition
-% \begin{align}
-% \label{eq:critical_points}
-% r\left( \frac{9}{2} + \frac{\Xi}{M} \pm 3\sqrt{\frac{9}{4}+\frac{\Xi}{M}} - \frac{R(r)^2}{M^2} \right) = 0\, .
-% \end{align}
-% Likewise, in the static case, we have a local minimum at $r=0$ associated with stable circular orbits\footnote{These stable circular orbits allow for trapped long-living modes which could potentially destabilise the system \cite{Cardoso:2014sna}.} or an anti-photon sphere.
-% Moreover, we have two values
-% \begin{align}
-% \frac{R_\pm^2}{M^2} = \frac{9}{2} + \frac{\Xi}{M} \pm 3\sqrt{\frac{9}{4}+\frac{\Xi}{M}}
-% \end{align}
-% for which the condition~\eqref{eq:critical_points} holds: the one with a plus sign corresponds to a maximum, whereas the minus sign corresponds to a minimum.
-% These extremal points exist for $\Xi/M\geq-9/4$, and they degenerate when the inequality is saturated.
-% However, we have only circular null orbits for $R_+$ with $\Xi/M > -2$ since the potential is non-positive at $R_-$ for $-9/4 \geq \Xi/M \geq -2$ as well as at $R_-$ for all values of $\Xi$.
+The critical points of the potential satisfy the following condition
+\begin{align}
+\label{eq:critical_points}
+r\left( \frac{9}{2} + \frac{\Xi}{M} \pm 3\sqrt{\frac{9}{4}+\frac{\Xi}{M}} - \frac{R(r)^2}{M^2} \right) = 0\, .
+\end{align}
+Likewise, in the static case, we have a local minimum at $r=0$ associated with stable circular orbits\footnote{These stable circular orbits allow for trapped long-living modes which could potentially destabilise the system \cite{Cardoso:2014sna}.} or an anti-photon sphere.
+Moreover, we have two values
+\begin{align}
+\frac{R_\pm^2}{M^2} = \frac{9}{2} + \frac{\Xi}{M} \pm 3\sqrt{\frac{9}{4}+\frac{\Xi}{M}}
+\end{align}
+for which the condition~\eqref{eq:critical_points} holds: the one with a plus sign corresponds to a maximum, whereas the minus sign corresponds to a minimum.
+These extremal points exist for $\Xi/M\geq-9/4$, and they degenerate when the inequality is saturated.
+However, we have only circular null orbits for $R_+$ with $\Xi/M > -2$ since the potential is non-positive at $R_-$ for $-9/4 \geq \Xi/M \geq -2$ as well as at $R_-$ for all values of $\Xi$.
 
-% The photon sphere is placed at coordinate $\rp = \sqrt{R_+^2-{\rt}^2}$ and the critical impact parameter $b_c$ is found at
-% \begin{align}
-% \label{eq:b_crit}
-% b_c=\frac{1}{\sqrt{V(\rp)}} = \frac{M}{2}\sqrt{ 18\left( 3+\sqrt{9+\frac{4\Xi}{M}} \right) +\frac{4\Xi}{M}\left( 9+\frac{\Xi}{M}+2\sqrt{9+\frac{4\Xi}{M}} \right) } \, . 
-% \end{align}
+The photon sphere is placed at coordinate $\rp = \sqrt{R_+^2-{\rt}^2}$ and the critical impact parameter $b_c$ is found at
+\begin{align}
+\label{eq:b_crit}
+b_c=\frac{1}{\sqrt{V(\rp)}} = \frac{M}{2}\sqrt{ 18\left( 3+\sqrt{9+\frac{4\Xi}{M}} \right) +\frac{4\Xi}{M}\left( 9+\frac{\Xi}{M}+2\sqrt{9+\frac{4\Xi}{M}} \right) } \, . 
+\end{align}
 
-% Integrating the trajectory equation~\eqref{eq:trajectory}, we obtain points $(r,\phi)$ of the trajectory from which we may plot $(\e^\xi,\phi)$ in Cartesian polar coordinates as in FIG.~\ref{fig:SV-ray-tracing}. 
+Integrating the trajectory equation~\eqref{eq:trajectory}, we obtain points $(r,\phi)$ of the trajectory from which we may plot $(\e^\xi,\phi)$ in Cartesian polar coordinates as in FIG.~\ref{fig:SV-ray-tracing}. 
 
-% %%%%%%% RAY-TRACING %%%%%%%
-% \begin{figure}[ht!]
-% \centering
-% % SV black hole
-% \begin{subfigure}[c]{0.32\textwidth} % Left
-% \centering
-% \caption{$\Xi/M = -1$}
-% \includegraphics[width=\textwidth]{figures/SV/ray_tracing/RT_SV_r1_xi-1.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth} % Middle
-% \centering
-% \caption{$\Xi/M = 0$}
-% \includegraphics[width=\textwidth]{figures/SV/ray_tracing/RT_SV_r1_xi0.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth} % Right
-% \centering
-% \caption{$\Xi/M = 1$}
-% \includegraphics[width=\textwidth]{figures/SV/ray_tracing/RT_SV_r1_xi1.pdf}
-% \end{subfigure}
+%%%%%%% RAY-TRACING %%%%%%%
+\begin{figure}[ht!]
+\centering
+% SV black hole
+\begin{subfigure}[c]{0.32\textwidth} % Left
+\centering
+\caption{$\Xi/M = -1$}
+\includegraphics[width=\textwidth]{figures/SV/ray_tracing/RT_SV_r1_xi-1.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth} % Middle
+\centering
+\caption{$\Xi/M = 0$}
+\includegraphics[width=\textwidth]{figures/SV/ray_tracing/RT_SV_r1_xi0.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth} % Right
+\centering
+\caption{$\Xi/M = 1$}
+\includegraphics[width=\textwidth]{figures/SV/ray_tracing/RT_SV_r1_xi1.pdf}
+\end{subfigure}
 
-% % SV wormhole
-% \begin{subfigure}[c]{0.32\textwidth} % Left
-% \centering
-% \includegraphics[width=\textwidth]{figures/SV/ray_tracing/RT_SV_r2_xi-1.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth} % Middle
-% \centering
-% \includegraphics[width=\textwidth]{figures/SV/ray_tracing/RT_SV_r2_xi0.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth} % Right
-% \centering
-% \includegraphics[width=\textwidth]{figures/SV/ray_tracing/RT_SV_r2_xi1.pdf}
-% \end{subfigure}
+% SV wormhole
+\begin{subfigure}[c]{0.32\textwidth} % Left
+\centering
+\includegraphics[width=\textwidth]{figures/SV/ray_tracing/RT_SV_r2_xi-1.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth} % Middle
+\centering
+\includegraphics[width=\textwidth]{figures/SV/ray_tracing/RT_SV_r2_xi0.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth} % Right
+\centering
+\includegraphics[width=\textwidth]{figures/SV/ray_tracing/RT_SV_r2_xi1.pdf}
+\end{subfigure}
  
-% \caption{
-% Ray-tracing for an SV black hole with $\rt=1.5$ (top row) and a traversable wormhole with $\rt=2.5$ (bottom row) for different values of $\Xi$ in each column.
-% They have been plotted in terms of the areal radius $\e^\xi$ and in units of $M=1$.
-% Light trajectories are coloured in blue, orange and red if they correspond to direct, lensed or photon ring images, respectively; while those coloured in black are those that do not hit the disk and make up the inner shadow.
-% In all cases, the dashed black circle represents the photon sphere $\rp$, while the central disk corresponds to the region inside the inner edge of the disk, filled with black if it is at the event horizon $r_\mathrm{hor}$ or with white if it is at the $\rt$.
-% One effect is the growth of both the photon ring and critical impact parameter as $\Xi$ increases.
-% Moreover, since the spacings between impact parameters are the same for all figures, we see that when $\Xi$ grows, the lensed and photon rings become narrower as there are fewer trajectories.
-% }
-% \label{fig:SV-ray-tracing}
-% \end{figure}
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\caption{
+Ray-tracing for an SV black hole with $\rt=1.5$ (top row) and a traversable wormhole with $\rt=2.5$ (bottom row) for different values of $\Xi$ in each column.
+They have been plotted in terms of the areal radius $\e^\xi$ and in units of $M=1$.
+Light trajectories are coloured in blue, orange and red if they correspond to direct, lensed or photon ring images, respectively; while those coloured in black are those that do not hit the disk and make up the inner shadow.
+In all cases, the dashed black circle represents the photon sphere $\rp$, while the central disk corresponds to the region inside the inner edge of the disk, filled with black if it is at the event horizon $r_\mathrm{hor}$ or with white if it is at the $\rt$.
+One effect is the growth of both the photon ring and critical impact parameter as $\Xi$ increases.
+Moreover, since the spacings between impact parameters are the same for all figures, we see that when $\Xi$ grows, the lensed and photon rings become narrower as there are fewer trajectories.
+}
+\label{fig:SV-ray-tracing}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% %%%% TRANSFER FUNCTIONS %%%%
-% \begin{figure}[ht!]
-% \centering
-% % SV black hole
-% \begin{subfigure}[c]{0.32\textwidth} % Left
-% \centering
-% \caption{$\Xi/M = -1$}
-% \includegraphics{figures/SV/transfer_function/TF_SV_r1_xi-1.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth} % Middle
-% \centering
-% \caption{$\Xi/M = 0$}
-% \includegraphics{figures/SV/transfer_function/TF_SV_r1_xi0.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth} % Right
-% \centering
-% \caption{$\Xi/M = 1$}
-% \includegraphics{figures/SV/transfer_function/TF_SV_r1_xi1.pdf}
-% \end{subfigure}
+%%%% TRANSFER FUNCTIONS %%%%
+\begin{figure}[ht!]
+\centering
+% SV black hole
+\begin{subfigure}[c]{0.32\textwidth} % Left
+\centering
+\caption{$\Xi/M = -1$}
+\includegraphics{figures/SV/transfer_function/TF_SV_r1_xi-1.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth} % Middle
+\centering
+\caption{$\Xi/M = 0$}
+\includegraphics{figures/SV/transfer_function/TF_SV_r1_xi0.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth} % Right
+\centering
+\caption{$\Xi/M = 1$}
+\includegraphics{figures/SV/transfer_function/TF_SV_r1_xi1.pdf}
+\end{subfigure}
 
-% % SV wormhole
-% \begin{subfigure}[c]{0.32\textwidth} % Left
-% \centering
-% \includegraphics{figures/SV/transfer_function/TF_SV_r2_xi-1.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth} % Middle
-% \centering
-% \includegraphics{figures/SV/transfer_function/TF_SV_r2_xi0.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth} % Right
-% \centering
-% \includegraphics{figures/SV/transfer_function/TF_SV_r2_xi1.pdf}
-% \end{subfigure}
+% SV wormhole
+\begin{subfigure}[c]{0.32\textwidth} % Left
+\centering
+\includegraphics{figures/SV/transfer_function/TF_SV_r2_xi-1.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth} % Middle
+\centering
+\includegraphics{figures/SV/transfer_function/TF_SV_r2_xi0.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth} % Right
+\centering
+\includegraphics{figures/SV/transfer_function/TF_SV_r2_xi1.pdf}
+\end{subfigure}
  
-% \caption{
-% First three transfer functions of a SV black hole with $\rt=1.5 M$ (top row) and a traversable wormhole with $\rt=2.5 M$ (bottom row) for different values of $\Xi$ per column.
-% We have used different colours for the direct (blue), lensed (orange) and photon ring (red) contributions.
-% Larger $\rt$ values widen the transfer functions of higher-order images, although they do not change the location of the critical impact parameter $b_c$.
-% On the other hand, as $\Xi$ grows, we observe that transfer functions shift to the right in addition to becoming steeper for the lensed and photon ring ones.
-% This results in an increase in $b_c$ for greater $\Xi$, as already predicted by Eq.~\eqref{eq:b_crit}.
-% }
-% \label{fig:SV_BH_transfer_functions}
-% \end{figure}
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\caption{
+First three transfer functions of a SV black hole with $\rt=1.5 M$ (top row) and a traversable wormhole with $\rt=2.5 M$ (bottom row) for different values of $\Xi$ per column.
+We have used different colours for the direct (blue), lensed (orange) and photon ring (red) contributions.
+Larger $\rt$ values widen the transfer functions of higher-order images, although they do not change the location of the critical impact parameter $b_c$.
+On the other hand, as $\Xi$ grows, we observe that transfer functions shift to the right in addition to becoming steeper for the lensed and photon ring ones.
+This results in an increase in $b_c$ for greater $\Xi$, as already predicted by Eq.~\eqref{eq:b_crit}.
+}
+\label{fig:SV_BH_transfer_functions}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% We will assume that there are no light rays coming from the other side of the throat ($r<0$) so that the emission is only due to the accretion disk in our region with $r>0$.
-% Consequently, back-traced light rays falling into the throat of the wormhole will not make any contribution to the observed intensity, resulting in a central dark spot in the final image.
+We will assume that there are no light rays coming from the other side of the throat ($r<0$) so that the emission is only due to the accretion disk in our region with $r>0$.
+Consequently, back-traced light rays falling into the throat of the wormhole will not make any contribution to the observed intensity, resulting in a central dark spot in the final image.
 
-% Finally, we have calculated the observed intensities from the emission profiles in FIG.~\ref{fig:emission-models}, together with the optical appearances that these objects would cast in the sky from a face-on orientation. 
-% These results are shown in Fig~\ref{fig:SV_observed_intensities}, where we have considered six different cases for the dynamical Simpson-Visser geometry.
-% As already explained, these observed profiles are given by the sum of lensed and photon ring contributions overimposed on the direct emission coming from the thin disk.
+Finally, we have calculated the observed intensities from the emission profiles in FIG.~\ref{fig:emission-models}, together with the optical appearances that these objects would cast in the sky from a face-on orientation. 
+These results are shown in Fig~\ref{fig:SV_observed_intensities}, where we have considered six different cases for the dynamical Simpson-Visser geometry.
+As already explained, these observed profiles are given by the sum of lensed and photon ring contributions overimposed on the direct emission coming from the thin disk.
 
-% Although black hole and wormhole images differ in the latter having wider light rings and a smaller shadow, the variation of $\Xi$ has similar effects on both of them.
-% The main observational consequence of the introduction of this parameter, which models an adiabatic temporal evolution, is an increase in the apparent size of the shadows as well as the diameter of observed light rings.
-% Additionally, we observe that these higher-order rings narrow as $\Xi$ grows.
-% The joint result of these two effects is a demagnification of lensing and photon ring contribution to the total observed intensity as $\Xi$ increases.
-% Despite this, lensed and photon rings are keep being noticeable in all figures.
+Although black hole and wormhole images differ in the latter having wider light rings and a smaller shadow, the variation of $\Xi$ has similar effects on both of them.
+The main observational consequence of the introduction of this parameter, which models an adiabatic temporal evolution, is an increase in the apparent size of the shadows as well as the diameter of observed light rings.
+Additionally, we observe that these higher-order rings narrow as $\Xi$ grows.
+The joint result of these two effects is a demagnification of lensing and photon ring contribution to the total observed intensity as $\Xi$ increases.
+Despite this, lensed and photon rings are keep being noticeable in all figures.
 
-% %%%%%%%%% SHADOWS %%%%%%%%%
-% \begin{figure}[ht!]
-% \centering 
-% % SV black hole
-% \begin{subfigure}[c]{0.32\textwidth}
-% \caption{$\Xi/M = -1$}
-% \includegraphics[width=\textwidth]{figures/SV/shadows/Observed_SV_r1_xi-1.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth}
-% \caption{$\Xi/M = 0$}
-% \includegraphics[width=\textwidth]{figures/SV/shadows/Observed_SV_r1_xi0.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth}
-% \caption{$\Xi/M = 1$}
-% \includegraphics[width=\textwidth]{figures/SV/shadows/Observed_SV_r1_xi1.pdf}
-% \end{subfigure}
+%%%%%%%%% SHADOWS %%%%%%%%%
+\begin{figure}[ht!]
+\centering 
+% SV black hole
+\begin{subfigure}[c]{0.32\textwidth}
+\caption{$\Xi/M = -1$}
+\includegraphics[width=\textwidth]{figures/SV/shadows/Observed_SV_r1_xi-1.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth}
+\caption{$\Xi/M = 0$}
+\includegraphics[width=\textwidth]{figures/SV/shadows/Observed_SV_r1_xi0.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth}
+\caption{$\Xi/M = 1$}
+\includegraphics[width=\textwidth]{figures/SV/shadows/Observed_SV_r1_xi1.pdf}
+\end{subfigure}
 
-% \begin{subfigure}[c]{0.32\textwidth}
-% \includegraphics[width=\textwidth]{figures/SV/shadows/Sh_SV_r1_xi-1.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth}
-% \includegraphics[width=\textwidth]{figures/SV/shadows/Sh_SV_r1_xi0.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth}
-% \includegraphics[width=\textwidth]{figures/SV/shadows/Sh_SV_r1_xi1.pdf}
-% \end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth}
+\includegraphics[width=\textwidth]{figures/SV/shadows/Sh_SV_r1_xi-1.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth}
+\includegraphics[width=\textwidth]{figures/SV/shadows/Sh_SV_r1_xi0.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth}
+\includegraphics[width=\textwidth]{figures/SV/shadows/Sh_SV_r1_xi1.pdf}
+\end{subfigure}
 
-% % SV wormhole
-% \begin{subfigure}[c]{0.32\textwidth}
-% \includegraphics[width=\textwidth]{figures/SV/shadows/Observed_SV_r2_xi-1.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth}
-% \includegraphics[width=\textwidth]{figures/SV/shadows/Observed_SV_r2_xi0.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth}
-% \includegraphics[width=\textwidth]{figures/SV/shadows/Observed_SV_r2_xi1.pdf}
-% \end{subfigure}
+% SV wormhole
+\begin{subfigure}[c]{0.32\textwidth}
+\includegraphics[width=\textwidth]{figures/SV/shadows/Observed_SV_r2_xi-1.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth}
+\includegraphics[width=\textwidth]{figures/SV/shadows/Observed_SV_r2_xi0.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth}
+\includegraphics[width=\textwidth]{figures/SV/shadows/Observed_SV_r2_xi1.pdf}
+\end{subfigure}
 
-% \begin{subfigure}[c]{0.32\textwidth}
-% \includegraphics[width=\textwidth]{figures/SV/shadows/Sh_SV_r2_xi-1.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth}
-% \includegraphics[width=\textwidth]{figures/SV/shadows/Sh_SV_r2_xi0.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth}
-% \includegraphics[width=\textwidth]{figures/SV/shadows/Sh_SV_r2_xi1.pdf}
-% \end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth}
+\includegraphics[width=\textwidth]{figures/SV/shadows/Sh_SV_r2_xi-1.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth}
+\includegraphics[width=\textwidth]{figures/SV/shadows/Sh_SV_r2_xi0.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth}
+\includegraphics[width=\textwidth]{figures/SV/shadows/Sh_SV_r2_xi1.pdf}
+\end{subfigure}
 
-% \caption{
-% Observed intensity profile and optical appearance of an SV black hole with $\rt = 1.5M$ (first two rows) and an SV traversable wormhole with $\rt = 2.5M$ (last two rows) for different values of $\Xi$ in each column.
-% The intensity profiles have been normalised to the maximum value $I_0$ of the emitted intensity.
-% Besides, all shadow plots use the same colour scale, which illustrates the demagnification of the lensing and photon rings as $\Xi$ increases.
-% }
-% \label{fig:SV_observed_intensities}
-% \end{figure}
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\caption{
+Observed intensity profile and optical appearance of an SV black hole with $\rt = 1.5M$ (first two rows) and an SV traversable wormhole with $\rt = 2.5M$ (last two rows) for different values of $\Xi$ in each column.
+The intensity profiles have been normalised to the maximum value $I_0$ of the emitted intensity.
+Besides, all shadow plots use the same colour scale, which illustrates the demagnification of the lensing and photon rings as $\Xi$ increases.
+}
+\label{fig:SV_observed_intensities}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \subsection{Shadows of dynamical Hayward spacetime}\label{shadows-Hayward}
+\subsection{Shadows of dynamical Hayward spacetime}\label{shadows-Hayward}
 
-% In this last example, we show the optical appearance of a dynamical Hayward spacetime, where $\e^{2\nu}$ is given by~\eqref{Hayward} and $\e^{2\xi}$ in Eq.~\eqref{eq:areal_case_1}.
-% The effective potential for null geodesics is then given by
-% \begin{align}
-% V(r) = \left( \sqrt{r^2+{\rt}^2}+\Xi \right)^{-2}\left( 1 - \frac{2Mr^2}{\left|r\right|^3 + 2M\gamma^2} \right)\, .
-% \end{align}
-% Since this potential depends on three parameters, we shall fix $\rt=1.5M$ so that there is always a throat, which will be hidden behind two event horizons $r_\pm$ whenever $\gamma<4\sqrt{3}M/9\approx 0.770M$.
-% Similarly to the Simpson-Visser example, we consider two values of $\gamma$ such that they result in two qualitatively different geometries: a two-horizon regular black hole $\gamma=0.5M$ and a horizonless wormhole $\gamma=1M$.
-% For each case, we give different values of $\Xi$ that model their optical appearances at different stages in their (adiabatic) evolution.
-% The shape of the potential for the considered cases is depicted in FIG.~\ref{fig:Hayward_potential}.
+In this last example, we show the optical appearance of a dynamical Hayward spacetime, where $\e^{2\nu}$ is given by~\eqref{Hayward} and $\e^{2\xi}$ in Eq.~\eqref{eq:areal_case_1}.
+The effective potential for null geodesics is then given by
+\begin{align}
+V(r) = \left( \sqrt{r^2+{\rt}^2}+\Xi \right)^{-2}\left( 1 - \frac{2Mr^2}{\left|r\right|^3 + 2M\gamma^2} \right)\, .
+\end{align}
+Since this potential depends on three parameters, we shall fix $\rt=1.5M$ so that there is always a throat, which will be hidden behind two event horizons $r_\pm$ whenever $\gamma<4\sqrt{3}M/9\approx 0.770M$.
+Similarly to the Simpson-Visser example, we consider two values of $\gamma$ such that they result in two qualitatively different geometries: a two-horizon regular black hole $\gamma=0.5M$ and a horizonless wormhole $\gamma=1M$.
+For each case, we give different values of $\Xi$ that model their optical appearances at different stages in their (adiabatic) evolution.
+The shape of the potential for the considered cases is depicted in FIG.~\ref{fig:Hayward_potential}.
 
-% \begin{figure}[ht!]
-% \includegraphics[width=\textwidth]{figures/Hayward/Hayward_potential.pdf}
-% \caption{
-% Hayward potential for $\gamma=0.5M$ (left) and $\gamma=1.0M$ (right) for different values of the parameter $\Xi$.
-% The parameter $\rt$ has been set to $\rt=1.5M$ in all cases.
-% The left panel corresponds to a two-horizon regular black hole, whereas the right panel corresponds to a traversable wormhole. 
-% In the former case, there are always two local maxima (photon spheres) for values of $r\geq0$, although the one at $r=0$ is hidden behind both horizons where $\e^{2\nu}$ vanishes. 
-% In the latter, there is a transition from having just one photon sphere at $r=0$ with $\Xi=-1$ to two photon spheres for the other values of $\Xi$. 
-% }
-% \label{fig:Hayward_potential}
-% \end{figure}
+\begin{figure}[ht!]
+\includegraphics[width=\textwidth]{figures/Hayward/Hayward_potential.pdf}
+\caption{
+Hayward potential for $\gamma=0.5M$ (left) and $\gamma=1.0M$ (right) for different values of the parameter $\Xi$.
+The parameter $\rt$ has been set to $\rt=1.5M$ in all cases.
+The left panel corresponds to a two-horizon regular black hole, whereas the right panel corresponds to a traversable wormhole. 
+In the former case, there are always two local maxima (photon spheres) for values of $r\geq0$, although the one at $r=0$ is hidden behind both horizons where $\e^{2\nu}$ vanishes. 
+In the latter, there is a transition from having just one photon sphere at $r=0$ with $\Xi=-1$ to two photon spheres for the other values of $\Xi$. 
+}
+\label{fig:Hayward_potential}
+\end{figure}
 
-% In the black hole case ($\gamma=0.5M$), the main difference from the Hayward potential is the presence of a global maximum at $r=0$, which means that we have a photon sphere at the throat in addition to the two unstable circular orbits on each side of the throat.
-% However, as this inner maximum is located at $r<r_+$ with $r_+$ in Eq.~\eqref{rpm},
-% it will not yield any additional rings in its optical appearance.
-% Therefore, light rays falling inside the horizon are trapped and do not return after orbiting that inner photon sphere, being then the outer light ring the only visible one, relative to the local maximum $\rp>r_+$.
+In the black hole case ($\gamma=0.5M$), the main difference from the Hayward potential is the presence of a global maximum at $r=0$, which means that we have a photon sphere at the throat in addition to the two unstable circular orbits on each side of the throat.
+However, as this inner maximum is located at $r<r_+$ with $r_+$ in Eq.~\eqref{rpm},
+it will not yield any additional rings in its optical appearance.
+Therefore, light rays falling inside the horizon are trapped and do not return after orbiting that inner photon sphere, being then the outer light ring the only visible one, relative to the local maximum $\rp>r_+$.
 
-% The values for the radial coordinate of the outer photon sphere $\rp$, as well as the critical impact parameter, must be found numerically, since the presence of non-vanishing parameters $\rt$ and $\Xi$ results in quite cumbersome expressions for the equations $V'(\rp)=0$ and $b_c=1/\sqrt{V(\rp)}$.
-% Nevertheless, as may be deduced from the potential FIG.~\ref{fig:Hayward_potential}, both $\rp$ and $b_c$ increase as $\Xi$ increases.
-% Furthermore, ray-tracing plots in FIG.~\ref{fig:Hayward-ray-tracing} show that both lensed and photon ring emission become narrower, resulting in a very similar behaviour to the Simpson-Visser black hole considered in Subsection~\ref{shadows-SV}.
+The values for the radial coordinate of the outer photon sphere $\rp$, as well as the critical impact parameter, must be found numerically, since the presence of non-vanishing parameters $\rt$ and $\Xi$ results in quite cumbersome expressions for the equations $V'(\rp)=0$ and $b_c=1/\sqrt{V(\rp)}$.
+Nevertheless, as may be deduced from the potential FIG.~\ref{fig:Hayward_potential}, both $\rp$ and $b_c$ increase as $\Xi$ increases.
+Furthermore, ray-tracing plots in FIG.~\ref{fig:Hayward-ray-tracing} show that both lensed and photon ring emission become narrower, resulting in a very similar behaviour to the Simpson-Visser black hole considered in Subsection~\ref{shadows-SV}.
 
-% The wormhole case ($\gamma=1M$) has some additional features that are not present in the Simpson-Visser wormhole and deserve further discussion.
-% Here, there are no horizons, and there is always an accessible photon sphere at the wormhole throat $\rp^1=0$.
-% Light rays near the critical curve with critical impact parameter $b_c^1 = |\rt+\Xi|$ approach this unstable circular orbit circle an arbitrarily large number of times before escaping back to infinity.
-% Those with $b\gtrsim b_c^1$ come back to our universe, whereas those with $b\lesssim b_c^1$ fall into the throat, circle arbitrarily many times and then go to $r\rightarrow-\infty$.
-% Additionally to this inner photon sphere, there may be an outer one $\rp^2$ at the local maximum, relative to that in the black hole case, whose values for $\rp^2$ and $b_c^2$ may only be obtained numerically (see \cite{Chiba:2017nml, Wei:2015qca} for a detailed discussion of this critical curve in the static case).
-% The main difference with the black hole case is that this outer photon sphere $\rp^2$ is not present for all values of $\Xi$, as the local maximum disappears for roughly $\Xi/M<-0.558$.
-% However, despite having only one critical curve at $b_c^1$, there is an additional \textit{strong lensing region} that results in an additional interval of impact parameters where light rays may also circle a large (but bounded) number of times, as can be seen in FIG.~\ref{fig:Hayward-ray-tracing}. 
-% It is also worth noting that, when both local maxima are present, there is always a local minimum or anti-photon sphere.
+The wormhole case ($\gamma=1M$) has some additional features that are not present in the Simpson-Visser wormhole and deserve further discussion.
+Here, there are no horizons, and there is always an accessible photon sphere at the wormhole throat $\rp^1=0$.
+Light rays near the critical curve with critical impact parameter $b_c^1 = |\rt+\Xi|$ approach this unstable circular orbit circle an arbitrarily large number of times before escaping back to infinity.
+Those with $b\gtrsim b_c^1$ come back to our universe, whereas those with $b\lesssim b_c^1$ fall into the throat, circle arbitrarily many times and then go to $r\rightarrow-\infty$.
+Additionally to this inner photon sphere, there may be an outer one $\rp^2$ at the local maximum, relative to that in the black hole case, whose values for $\rp^2$ and $b_c^2$ may only be obtained numerically (see \cite{Chiba:2017nml, Wei:2015qca} for a detailed discussion of this critical curve in the static case).
+The main difference with the black hole case is that this outer photon sphere $\rp^2$ is not present for all values of $\Xi$, as the local maximum disappears for roughly $\Xi/M<-0.558$.
+However, despite having only one critical curve at $b_c^1$, there is an additional \textit{strong lensing region} that results in an additional interval of impact parameters where light rays may also circle a large (but bounded) number of times, as can be seen in FIG.~\ref{fig:Hayward-ray-tracing}. 
+It is also worth noting that, when both local maxima are present, there is always a local minimum or anti-photon sphere.
 
-% %%%%%%% RAY-TRACING %%%%%%%
-% \begin{figure}[ht!]
-% \centering
-% % Hayward black hole
-% \begin{subfigure}[c]{0.32\textwidth} % Left
-% \centering
-% \caption{$\Xi/M = -1$}
-% \includegraphics[width=\textwidth]{figures/Hayward/ray_tracing/RT_Hayward_g0_xi-1.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth} % Middle
-% \centering
-% \caption{$\Xi/M = 0$}
-% \includegraphics[width=\textwidth]{figures/Hayward/ray_tracing/RT_Hayward_g0_xi0.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth} % Right
-% \centering
-% \caption{$\Xi/M = 1$}
-% \includegraphics[width=\textwidth]{figures/Hayward/ray_tracing/RT_Hayward_g0_xi1.pdf}
-% \end{subfigure}
+%%%%%%% RAY-TRACING %%%%%%%
+\begin{figure}[ht!]
+\centering
+% Hayward black hole
+\begin{subfigure}[c]{0.32\textwidth} % Left
+\centering
+\caption{$\Xi/M = -1$}
+\includegraphics[width=\textwidth]{figures/Hayward/ray_tracing/RT_Hayward_g0_xi-1.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth} % Middle
+\centering
+\caption{$\Xi/M = 0$}
+\includegraphics[width=\textwidth]{figures/Hayward/ray_tracing/RT_Hayward_g0_xi0.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth} % Right
+\centering
+\caption{$\Xi/M = 1$}
+\includegraphics[width=\textwidth]{figures/Hayward/ray_tracing/RT_Hayward_g0_xi1.pdf}
+\end{subfigure}
 
-% % Hayward wormhole
-% \begin{subfigure}[c]{0.32\textwidth} % Left
-% \centering
-% \includegraphics[width=\textwidth]{figures/Hayward/ray_tracing/RT_Hayward_g1_xi-1.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth} % Middle
-% \centering
-% \includegraphics[width=\textwidth]{figures/Hayward/ray_tracing/RT_Hayward_g1_xi0.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth} % Right
-% \centering
-% \includegraphics[width=\textwidth]{figures/Hayward/ray_tracing/RT_Hayward_g1_xi1.pdf}
-% \end{subfigure}
+% Hayward wormhole
+\begin{subfigure}[c]{0.32\textwidth} % Left
+\centering
+\includegraphics[width=\textwidth]{figures/Hayward/ray_tracing/RT_Hayward_g1_xi-1.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth} % Middle
+\centering
+\includegraphics[width=\textwidth]{figures/Hayward/ray_tracing/RT_Hayward_g1_xi0.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth} % Right
+\centering
+\includegraphics[width=\textwidth]{figures/Hayward/ray_tracing/RT_Hayward_g1_xi1.pdf}
+\end{subfigure}
  
-% \caption{
-% Ray-tracing for the Hayward black hole with $\gamma=0.5M$ (top row) and traversable wormhole with $\gamma=1.0M$ (bottom row) for different values of $\Xi$ in each column ($\rt=1.5M$ in all cases).
-% They have been plotted in terms of the areal radius $\e^\xi$ and in units of $M=1$.
-% Light trajectories are coloured in blue, orange and red if they correspond to direct, lensed or photon ring images, respectively; while those coloured in black are those that do not hit the disk and make up the inner shadow.
-% In all cases, the dashed black circle represents the photon sphere $\rp$, while the central disk corresponds to the region inside the inner edge of the disk, filled with black if it is at the event horizon $r_\mathrm{hor}$ or with white if it is at the $\rt$.
-% Note that in the wormhole figures, geodesics cross each other due to the presence of two critical curves (middle and right), or one critical curve plus a \textit{strong lensing region} (left)
-% The effect of introducing the parameter $\Xi$ is the same as in the SV examples.
-% }
-% \label{fig:Hayward-ray-tracing}
-% \end{figure}
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\caption{
+Ray-tracing for the Hayward black hole with $\gamma=0.5M$ (top row) and traversable wormhole with $\gamma=1.0M$ (bottom row) for different values of $\Xi$ in each column ($\rt=1.5M$ in all cases).
+They have been plotted in terms of the areal radius $\e^\xi$ and in units of $M=1$.
+Light trajectories are coloured in blue, orange and red if they correspond to direct, lensed or photon ring images, respectively; while those coloured in black are those that do not hit the disk and make up the inner shadow.
+In all cases, the dashed black circle represents the photon sphere $\rp$, while the central disk corresponds to the region inside the inner edge of the disk, filled with black if it is at the event horizon $r_\mathrm{hor}$ or with white if it is at the $\rt$.
+Note that in the wormhole figures, geodesics cross each other due to the presence of two critical curves (middle and right), or one critical curve plus a \textit{strong lensing region} (left)
+The effect of introducing the parameter $\Xi$ is the same as in the SV examples.
+}
+\label{fig:Hayward-ray-tracing}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-% %%%% TRANSFER FUNCTIONS %%%%
-% \begin{figure}[ht!]
-% \centering
-% % Hayward black hole
-% \begin{subfigure}[c]{0.32\textwidth} % Left
-% \centering
-% \caption{$\Xi/M = -1$}
-% \includegraphics{figures/Hayward/transfer_function/TF_Hayward_g0_xi-1.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth} % Middle
-% \centering
-% \caption{$\Xi/M = 0$}
-% \includegraphics{figures/Hayward/transfer_function/TF_Hayward_g0_xi0.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth} % Right
-% \centering
-% \caption{$\Xi/M = 1$}
-% \includegraphics{figures/Hayward/transfer_function/TF_Hayward_g0_xi1.pdf}
-% \end{subfigure}
+%%%% TRANSFER FUNCTIONS %%%%
+\begin{figure}[ht!]
+\centering
+% Hayward black hole
+\begin{subfigure}[c]{0.32\textwidth} % Left
+\centering
+\caption{$\Xi/M = -1$}
+\includegraphics{figures/Hayward/transfer_function/TF_Hayward_g0_xi-1.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth} % Middle
+\centering
+\caption{$\Xi/M = 0$}
+\includegraphics{figures/Hayward/transfer_function/TF_Hayward_g0_xi0.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth} % Right
+\centering
+\caption{$\Xi/M = 1$}
+\includegraphics{figures/Hayward/transfer_function/TF_Hayward_g0_xi1.pdf}
+\end{subfigure}
 
-% % Hayward wormhole
-% \begin{subfigure}[c]{0.32\textwidth} % Left
-% \centering
-% \includegraphics{figures/Hayward/transfer_function/TF_Hayward_g1_xi-1.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth} % Middle
-% \centering
-% \includegraphics{figures/Hayward/transfer_function/TF_Hayward_g1_xi0.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth} % Right
-% \centering
-% \includegraphics{figures/Hayward/transfer_function/TF_Hayward_g1_xi1.pdf}
-% \end{subfigure}
+% Hayward wormhole
+\begin{subfigure}[c]{0.32\textwidth} % Left
+\centering
+\includegraphics{figures/Hayward/transfer_function/TF_Hayward_g1_xi-1.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth} % Middle
+\centering
+\includegraphics{figures/Hayward/transfer_function/TF_Hayward_g1_xi0.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth} % Right
+\centering
+\includegraphics{figures/Hayward/transfer_function/TF_Hayward_g1_xi1.pdf}
+\end{subfigure}
  
-% \caption{
-% First three transfer functions of a Hayward black hole with $\gamma=0.5 M$ (top row) and a traversable wormhole with $\gamma=1.0 M$ (bottom row) for different values of $\Xi$ per column ($\rt=1.5M$ in all cases).
-% We have used different colours for the direct (blue), lensed (orange) and photon ring (red) contributions.
-% In the middle and right figures in the bottom row, transfer functions for $m=2$ and $m=3$ have support on two disjoint regions due to the presence of an additional photon sphere.
-% As $\Xi$ grows, we observe that transfer functions shift to the right in addition to becoming steeper for lensed and photon ring contributions in the black hole case.
-% }
-% \label{fig:Hayward_BH_transfer_functions}
-% \end{figure}
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\caption{
+First three transfer functions of a Hayward black hole with $\gamma=0.5 M$ (top row) and a traversable wormhole with $\gamma=1.0 M$ (bottom row) for different values of $\Xi$ per column ($\rt=1.5M$ in all cases).
+We have used different colours for the direct (blue), lensed (orange) and photon ring (red) contributions.
+In the middle and right figures in the bottom row, transfer functions for $m=2$ and $m=3$ have support on two disjoint regions due to the presence of an additional photon sphere.
+As $\Xi$ grows, we observe that transfer functions shift to the right in addition to becoming steeper for lensed and photon ring contributions in the black hole case.
+}
+\label{fig:Hayward_BH_transfer_functions}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% In order to obtain the optical appearances, we use the emission profiles depicted in FIG.~\ref{fig:emission-models}.
-% The observed intensity is then computed for each of these examples using equation~\eqref{eq:observed-intensity} with transfer functions in FIG.~\ref{fig:Hayward_BH_transfer_functions}.
-% The observed intensities and optical appearances are shown in FIG.~\ref{fig:Hayward_observed_intensities}. 
+In order to obtain the optical appearances, we use the emission profiles depicted in FIG.~\ref{fig:emission-models}.
+The observed intensity is then computed for each of these examples using equation~\eqref{eq:observed-intensity} with transfer functions in FIG.~\ref{fig:Hayward_BH_transfer_functions}.
+The observed intensities and optical appearances are shown in FIG.~\ref{fig:Hayward_observed_intensities}. 
 
-% In the Hayward black hole case, the optical appearances are qualitatively similar to those of the SV black hole: a single critical curve with lensing and photon rings becoming larger and narrower as $\Xi$ increases.
-% Additionally to these effects, the Hayward wormhole results in a very particular optical appearance, which differs in several aspects from the SV wormhole.
+In the Hayward black hole case, the optical appearances are qualitatively similar to those of the SV black hole: a single critical curve with lensing and photon rings becoming larger and narrower as $\Xi$ increases.
+Additionally to these effects, the Hayward wormhole results in a very particular optical appearance, which differs in several aspects from the SV wormhole.
 
-% First, for $\Xi/M=0,1$, there are the usual lensed and photon rings superimposed on the direct emission due to the outer critical curve $b_c^2$.
-% Indeed, these rings appear even in the $\Xi/M=-1$ case, when that critical curve is no longer present.
-% As previously mentioned, the existence of a \textit{strong lensing} region allows light rays to intersect the accretion disk up to three times, thus producing these $m=2$ and $m=3$ contributions in the final image.
+First, for $\Xi/M=0,1$, there are the usual lensed and photon rings superimposed on the direct emission due to the outer critical curve $b_c^2$.
+Indeed, these rings appear even in the $\Xi/M=-1$ case, when that critical curve is no longer present.
+As previously mentioned, the existence of a \textit{strong lensing} region allows light rays to intersect the accretion disk up to three times, thus producing these $m=2$ and $m=3$ contributions in the final image.
 
-% Furthermore, there is a wide intensity peak bordering the central brightness depression of the wormhole, which carries a large fraction of the total observed intensity.
-% This inner peak is part of the direct emission, and it is a key feature of horizonless geometries where the metric function $g_{tt}\rightarrow-1$ when $r\rightarrow0$, which causes the gravitational redshift to vanish and thus the observed intensity~\eqref{eq:observed-intensity} is not suppressed.
-% This fact, combined with an emission profile peaking near $r=0$, yields a very prominent emission which clearly distinguishes a Hayward wormhole from every other example considered here.
+Furthermore, there is a wide intensity peak bordering the central brightness depression of the wormhole, which carries a large fraction of the total observed intensity.
+This inner peak is part of the direct emission, and it is a key feature of horizonless geometries where the metric function $g_{tt}\rightarrow-1$ when $r\rightarrow0$, which causes the gravitational redshift to vanish and thus the observed intensity~\eqref{eq:observed-intensity} is not suppressed.
+This fact, combined with an emission profile peaking near $r=0$, yields a very prominent emission which clearly distinguishes a Hayward wormhole from every other example considered here.
 
-% Lastly, there is a thin peak from the lensed emission superimposed on the above-mentioned peak, where the maximum of the observed intensity is found, and it is due to the inner critical curve at $b_c^1$.
-% However, this lensed ring is extremely narrow, carrying only a small fraction of the total intensity and being barely visible with the employed resolution\footnote{One may zoom in just to see a ring with a width of a few pixels.}.
-% In fact, the photon ring emission is so faint that it is completely negligible and cannot be perceived in the final output.
-% We remark that this Hayward wormhole has a very similar structure to the generalised black bounce introduced in \cite{Lobo:2020ffi}, whose optical appearance was studied in Refs.~\cite{Olmo:2021piq, Guerrero:2022qkh} is very similar to the one obtained here.
+Lastly, there is a thin peak from the lensed emission superimposed on the above-mentioned peak, where the maximum of the observed intensity is found, and it is due to the inner critical curve at $b_c^1$.
+However, this lensed ring is extremely narrow, carrying only a small fraction of the total intensity and being barely visible with the employed resolution\footnote{One may zoom in just to see a ring with a width of a few pixels.}.
+In fact, the photon ring emission is so faint that it is completely negligible and cannot be perceived in the final output.
+We remark that this Hayward wormhole has a very similar structure to the generalised black bounce introduced in \cite{Lobo:2020ffi}, whose optical appearance was studied in Refs.~\cite{Olmo:2021piq, Guerrero:2022qkh} is very similar to the one obtained here.
 
-% %%%%%%%%% SHADOWS %%%%%%%%%
-% \begin{figure}[ht!]
-% \centering 
-% % SV black hole
-% \begin{subfigure}[c]{0.32\textwidth}
-% \caption{$\Xi/M = -1$}
-% \includegraphics[width=\textwidth]{figures/Hayward/shadows/Observed_Hayward_g0_xi-1.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth}
-% \caption{$\Xi/M = 0$}
-% \includegraphics[width=\textwidth]{figures/Hayward/shadows/Observed_Hayward_g0_xi0.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth}
-% \caption{$\Xi/M = 1$}
-% \includegraphics[width=\textwidth]{figures/Hayward/shadows/Observed_Hayward_g0_xi1.pdf}
-% \end{subfigure}
+%%%%%%%%% SHADOWS %%%%%%%%%
+\begin{figure}[ht!]
+\centering 
+% SV black hole
+\begin{subfigure}[c]{0.32\textwidth}
+\caption{$\Xi/M = -1$}
+\includegraphics[width=\textwidth]{figures/Hayward/shadows/Observed_Hayward_g0_xi-1.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth}
+\caption{$\Xi/M = 0$}
+\includegraphics[width=\textwidth]{figures/Hayward/shadows/Observed_Hayward_g0_xi0.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth}
+\caption{$\Xi/M = 1$}
+\includegraphics[width=\textwidth]{figures/Hayward/shadows/Observed_Hayward_g0_xi1.pdf}
+\end{subfigure}
 
-% \begin{subfigure}[c]{0.32\textwidth}
-% \includegraphics[width=\textwidth]{figures/Hayward/shadows/Sh_Hayward_g0_xi-1.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth}
-% \includegraphics[width=\textwidth]{figures/Hayward/shadows/Sh_Hayward_g0_xi0.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth}
-% \includegraphics[width=\textwidth]{figures/Hayward/shadows/Sh_Hayward_g0_xi1.pdf}
-% \end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth}
+\includegraphics[width=\textwidth]{figures/Hayward/shadows/Sh_Hayward_g0_xi-1.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth}
+\includegraphics[width=\textwidth]{figures/Hayward/shadows/Sh_Hayward_g0_xi0.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth}
+\includegraphics[width=\textwidth]{figures/Hayward/shadows/Sh_Hayward_g0_xi1.pdf}
+\end{subfigure}
 
-% % SV wormhole
-% \begin{subfigure}[c]{0.32\textwidth}
-% \includegraphics[width=\textwidth]{figures/Hayward/shadows/Observed_Hayward_g1_xi-1.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth}
-% \includegraphics[width=\textwidth]{figures/Hayward/shadows/Observed_Hayward_g1_xi0.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth}
-% \includegraphics[width=\textwidth]{figures/Hayward/shadows/Observed_Hayward_g1_xi1.pdf}
-% \end{subfigure}
+% SV wormhole
+\begin{subfigure}[c]{0.32\textwidth}
+\includegraphics[width=\textwidth]{figures/Hayward/shadows/Observed_Hayward_g1_xi-1.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth}
+\includegraphics[width=\textwidth]{figures/Hayward/shadows/Observed_Hayward_g1_xi0.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth}
+\includegraphics[width=\textwidth]{figures/Hayward/shadows/Observed_Hayward_g1_xi1.pdf}
+\end{subfigure}
 
-% \begin{subfigure}[c]{0.32\textwidth}
-% \includegraphics[width=\textwidth]{figures/Hayward/shadows/Sh_Hayward_g1_xi-1.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth}
-% \includegraphics[width=\textwidth]{figures/Hayward/shadows/Sh_Hayward_g1_xi0.pdf}
-% \end{subfigure}
-% \begin{subfigure}[c]{0.32\textwidth}
-% \includegraphics[width=\textwidth]{figures/Hayward/shadows/Sh_Hayward_g1_xi1.pdf}
-% \end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth}
+\includegraphics[width=\textwidth]{figures/Hayward/shadows/Sh_Hayward_g1_xi-1.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth}
+\includegraphics[width=\textwidth]{figures/Hayward/shadows/Sh_Hayward_g1_xi0.pdf}
+\end{subfigure}
+\begin{subfigure}[c]{0.32\textwidth}
+\includegraphics[width=\textwidth]{figures/Hayward/shadows/Sh_Hayward_g1_xi1.pdf}
+\end{subfigure}
 
-% \caption{
-% Observed intensity profile and optical appearance of a Hayward regular black hole with $\gamma = 0.5M$ (first two rows) and a Hayward traversable wormhole with $\gamma = 1.0M$ (last two rows) for different values of $\Xi$ in each column.
-% The intensity profiles have been normalised to the maximum value $I_0$ of the emitted intensity.
-% }
-% \label{fig:Hayward_observed_intensities}
-% \end{figure}
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\caption{
+Observed intensity profile and optical appearance of a Hayward regular black hole with $\gamma = 0.5M$ (first two rows) and a Hayward traversable wormhole with $\gamma = 1.0M$ (last two rows) for different values of $\Xi$ in each column.
+The intensity profiles have been normalised to the maximum value $I_0$ of the emitted intensity.
+}
+\label{fig:Hayward_observed_intensities}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Conclusions} \label{conclusions}
 
