@@ -37,27 +37,25 @@ python3 scripts/build.py
 ```
 
 
-## File tree
+## Citation
 
-To see the file tree, move to the root of the project and run
-```bash
-tree -A -I "*.pdf|*.bbl|*.synctex.gz"
+The use of this work in scientific publications must be properly acknowledged.
+Please cite the following:
+
+**BibTeX**
+```
+@article{Nojiri:2026tjn,
+    author = "Nojiri, Shin'ichi and Odintsov, Sergei D. and S{\'a}ez-Chill{\'o}n G{\'o}mez, Diego and Cuadros, {\'A}lvaro Salazar",
+    title = "{Horizon singularity, energy conditions and shadows in time-dependent and spherically symmetric spacetime}",
+    eprint = "2608.15740",
+    archivePrefix = "arXiv",
+    primaryClass = "gr-qc",
+    reportNumber = "KEK-TH-2861, KEK-Cosmo-0429",
+    month = "8",
+    year = "2026"
+}
 ```
 
-Then, paste the output here
-```bash
-├── LICENSE
-├── README.md
-├── latex
-│   ├── figures
-│   ├── main.tex
-│   └── references.bib
-├── requirements.txt
-├── scripts
-│   ├── build.py
-│   └── setup-nb-filter.sh
-└── src
-    ├── generate_images.py
-    ├── paper.mplstyle
-    └── ray_tracing_WH.ipynb
-```
+## License
+
+This work is licensed under a Creative Commons Attribution 4.0 International License ([CC BY 4.0](/LICENSE)).
