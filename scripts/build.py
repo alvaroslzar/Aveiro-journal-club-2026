@@ -53,17 +53,26 @@ def main():
 
     os.chdir(latex_dir)
     print("Running: Build PDF")
-    for cmd in [
-        ["pdflatex", "-interaction=nonstopmode", "-synctex=1", "main.tex"],
-        ["bibtex", "main"],
-        ["pdflatex", "-interaction=nonstopmode", "-synctex=1", "main.tex"],
-        ["pdflatex", "-interaction=nonstopmode", "-synctex=1", "main.tex"],
-    ]:
+    latex_cmd = ["pdflatex", "-interaction=nonstopmode", "-synctex=1", "main.tex"]
+    if not run_cmd(latex_cmd, "Build PDF", quiet=True, announce=False):
+        sys.exit(1)
+
+    aux_path = latex_dir / "main.aux"
+    aux_text = aux_path.read_text(encoding="utf-8", errors="replace") if aux_path.exists() else ""
+    commands = []
+    if r"\bibdata{" in aux_text:
+        commands.append(["bibtex", "main"])
+    commands.extend([latex_cmd, latex_cmd])
+
+    for cmd in commands:
         if not run_cmd(cmd, "Build PDF", quiet=True, announce=False):
             sys.exit(1)
     print("✓ Build PDF completed")
 
-    for ext in ['.aux', '.log', '.out', '.toc', '.lot', '.lof', '.fls', '.blg', '.fdb_latexmk']:
+    for ext in [
+        '.aux', '.log', '.out', '.toc', '.lot', '.lof', '.nav', '.snm',
+        '.fls', '.blg', '.fdb_latexmk', '.bbl', '.synctex.gz'
+    ]:
         (latex_dir / f"main{ext}").unlink(missing_ok=True)
 
     elapsed = time.time() - start
