@@ -1,14 +1,26 @@
 \documentclass[english]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
+\usepackage{csquotes}
+
+\usepackage[style=authoryear-comp]{biblatex}
+\addbibresource{references.bib}
+
 
 % Theme
 % \usetheme{Darmstadt}
-% \usetheme{Frankfurt}
-\usetheme{Madrid}
+\usetheme{Frankfurt}
+% \usetheme{Madrid}
 % \usetheme{Warsaw}
 % \useoutertheme[subsection=false]{smoothbars}
 \setbeamertemplate{navigation symbols}{}
+
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\rt}{r_\mathrm{throat}}
+\newcommand{\rp}{r_\mathrm{ps}}
+\newcommand{\ri}{r_\mathrm{inner}}
+\newcommand{\rhor}{r_\mathrm{hor}}
+\newcommand{\arcsinh}{\mathrm{arcsinh}}
 
 % Macros
 \title[arXiv:2608.15740]{Horizon singularity, energy conditions and shadows in time-dependent and spherically symmetric spacetime}
@@ -33,7 +45,7 @@
 
 \begin{frame}
     \footnotesize
-    Based on the work arXiv:2608.15740 [gr-qc]
+    Based on 2608.15740 [gr-qc]
     \centering
     \includegraphics[width=\textwidth]{assets/snapshot.png}
 \end{frame}
@@ -47,17 +59,78 @@
 \section{Motivation}
 \begin{frame}{Motivation}
 
+    The McVittie solution\footcite{McVittie:1933zz}
+    \begin{align*}
+    ds^2 = -\left( \frac{1-\frac{M}{2a(t)R}}{1+\frac{M}{2a(t)R}} \right)^2 dt^2 + \left( 1+\frac{M}{2a(t)R} \right)^4 a^2(t) \left\{ dR^2 +R^2\,d\Omega^2 \right\}
+    \end{align*}
+    describes a massive object embedded in a FLRW Universe.
+
+    \begin{itemize}
+    \item <2-> Recently, it has been shown\footcite{Modesto:2025cre} that there is a \textbf{naked curvature singularity at the horizon}.
+
+    \item<3-> Is this exlusive of the McVittie solution?
+
+    \item<4-> Can this be avoided? If so, how?
+    \end{itemize}
 \end{frame}
 
 
 \section{Singularity problems}
 \begin{frame}{Singularity problems}
+    Indeed, this is a \textbf{rather universal phenomenon}, that is, the horizon embedding in a dynamical background becomes a naked singularity for a large class of models.
 
+    We consider the following form of the metric in the \textbf{dynamical} and \textbf{spherically symmetric spacetime}
+    \begin{align*}
+    ds^2 = - \e^{2\nu (t,r)} dt^2 + \e^{2\lambda (t,r)} dr^2 + \e^{2\xi (t,r)} \left( d\vartheta^2 + \sin^2\vartheta \, d\varphi^2 \right)\, , 
+    \end{align*}
+
+    \begin{itemize}
+        \item<2-> At $\e^{2\nu (t,r)}=0$, we have the horizon(s).
+        \item<2-> There, \textbf{curvatures are singular in general}.
+    \end{itemize}
 \end{frame}
+
+
+\begin{frame}
+    The Ricci scalar:
+    \only<1>{
+        \begin{align*}
+        R= 2 \e^{-2 \nu} \left\{\ddot\lambda + \left( \dot\lambda - \dot\nu \right) \dot\lambda \right\} + 4 \e^{-2\nu} \left\{ \ddot\xi + \left(\dot\xi - \dot\nu \right) \dot \xi \right\} + ...
+        \end{align*}
+    }
+    \onslide<2->{
+        \begin{align*} % Same but with underbraces
+        R= 2 \e^{-2 \nu} 
+        \underbrace{ \left\{\ddot\lambda + \left( \dot\lambda - \dot\nu \right) \dot\lambda \right\}}_{\text{vanish at }\e^{2\nu}=0} + 4 \e^{-2\nu} \underbrace{\left\{ \ddot\xi + \left(\dot\xi - \dot\nu \right) \dot \xi \right\}}_{\text{vanish at }\e^{2\nu}=0} + ...
+        \end{align*}
+    }
+
+    \onslide<3->{
+        Then, we require
+        \begin{align*}
+        \ddot\lambda + \left( \dot\lambda - \dot\nu \right) \dot\lambda =&\, \Lambda_0 \left(t, r\right) \e^{2\nu}\, , \\
+        \ddot\xi + \left(\dot\xi - \dot\nu \right) \dot \xi =&\, \Xi_0 \left(t, r\right) \e^{2\nu}\,, 
+        \end{align*}
+        where $\Lambda_0\left(t, r\right)$ and $\Xi_0\left(t, r\right)$ are smooth.
+    }
+\end{frame}
+
 
 \subsection{Examples}
 \begin{frame}{Examples}
 
+\end{frame}
+
+
+\begin{frame}
+    Bottomline:
+    \begin{itemize}
+        \item<1-> When we consider a black hole in a dynamical background, the horizon becomes a naked singularity for a large class of models.
+
+        \item<2-> We give general prescriptions on how this can be avoided.
+
+        \item<3-> As examples, we construct the dynamical extensions of a Hayward-like wormhole and the Simpson-Visser black bounce.
+    \end{itemize}
 \end{frame}
 
 
@@ -123,5 +196,9 @@ Questions?
 \begin{frame}[noframenumbering]{Thermodynamics}
 
 \end{frame}
+
+ \begin{frame}
+     \printbibliography
+ \end{frame} 
 
 \end{document}
