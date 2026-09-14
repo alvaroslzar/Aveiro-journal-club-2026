@@ -57,7 +57,6 @@
 
 \section{Motivation}
 \begin{frame}{Motivation}
-
     The McVittie solution\footcite{McVittie:1933zz}
     \begin{align}
     ds^2 = -\left( \frac{1-\frac{M}{2a(t)R}}{1+\frac{M}{2a(t)R}} \right)^2 dt^2 + \left( 1+\frac{M}{2a(t)R} \right)^4 a^2(t) \left\{ dR^2 +R^2\,d\Omega^2 \right\}
@@ -136,17 +135,19 @@
 \subsection{Examples}
 \begin{frame}{Examples: Simpson-Visser black bounce}
     We consider \textbf{exotic compact objects}, such as traversable wormholes and black holes with a throat.
-    \begin{itemize}
-        \item First, the time-dependent extension of the Simpson-Visser black bounce\footcite{Simpson:2018tsi}, whose metric is given by
-        \begin{align}
-        \e^{2\nu}=\e^{-2\lambda}= 1 - \frac{2M}{\sqrt{r^2 + {r_\mathrm{throat}}^2}}\, , \quad 
-        r\in (-\infty, \infty) .
-        \end{align}
-        Choosing the functions in \eqref{xi1} as $\Xi_1(r)=\sqrt{r^2+{\rt}^2}$ and $\Xi_2(t,r)=e^{-2\nu(r)}\Xi_{02}(t)$, we get the areal radius function
-        \begin{align}
-        \e^\xi = \sqrt{r^2+{\rt}^2}+\Xi_{02}(t)\,.
-        \end{align}
-    \end{itemize}
+    \onslide<2->{
+        \begin{itemize}
+            \item First, the time-dependent extension of the Simpson-Visser black bounce\footcite{Simpson:2018tsi}, whose metric is given by
+            \begin{align}
+            \e^{2\nu}=\e^{-2\lambda}= 1 - \frac{2M}{\sqrt{r^2 + {r_\mathrm{throat}}^2}}\, , \quad 
+            r\in (-\infty, \infty) .
+            \end{align}
+            Choosing the functions in \eqref{xi1} as $\Xi_1(r)=\sqrt{r^2+{\rt}^2}$ and $\Xi_2(t,r)=e^{-2\nu(r)}\Xi_{02}(t)$, we get the areal radius function
+            \begin{align}
+            \e^\xi = \sqrt{r^2+{\rt}^2}+\Xi_{02}(t)\,.
+            \end{align}
+        \end{itemize}
+    }
 \end{frame}
 
 
@@ -174,16 +175,57 @@
         \item<2-> We give general prescriptions on how this can be avoided.
 
         \item<3-> As examples, we construct the dynamical extensions of the Simpson-Visser black bounce and a Hayward-like wormhole.
-        In these particular cases, only $\e^\xi$ depends on $t$.
+        In these particular cases, \textbf{only $\e^\xi$ depends on $t$}.
     \end{itemize}
 \end{frame}
 
 
 \section{Shadows of non-stationary wormholes}
 \begin{frame}{Shadows of non-stationary wormholes}
-
+    \onslide<1->{
+        In order to simulate their optical appearances, we need to solve the \textbf{null geodesic equations}.
+        In the equatorial plane $\vartheta=\pi/2$ :
+        \begin{align}
+        \frac{d}{d\sigma}\left(\e^{2\nu} k^t \right) + \frac{(k^\varphi)^2}{2}\frac{\partial}{\partial t}\left( \e^{2\xi} \right) = 0\, ,
+        \quad
+        \frac{d}{d\sigma}\left( \e^{2\xi}k^\varphi \right) = 0\, ,
+        \end{align}
+    }
+    \onslide<2->{
+        Using the adiabatic approximation $\implies \partial_t \e^\xi \approx 0$.
+        We shall treat $\Xi_{02}(t)\equiv\Xi$ as an additional parameter, so we get two conserved quantities:
+        \begin{align}
+        \e^{2\nu} k^t = E\, ,
+        \quad
+        \e^{2\xi} k^\varphi = L\, .
+        \end{align}
+    }
+    \onslide<3->{
+        Null geodesics only depend on their \textbf{impact parameter} $b=L/E$ and the \textbf{effective potential} $V(r)=e^{2\nu-2\xi}$
+        \begin{align}
+        \left(\frac{d r}{d\sigma}\right)^2 = \frac{1}{b^2} - V(r)\,.
+        \end{align}
+    }
 \end{frame}
 
+
+\begin{frame}{Ray-tracing method\footcite{Gralla:2019xty,Guerrero:2021ues}}
+    \begin{enumerate}
+        \item[1.] Compute the trajectory of the geodesic.
+    \end{enumerate}
+    \begin{equation}
+    \frac{d\varphi}{dr} = \pm \frac{b\ \e^{-\xi}}{\sqrt{\e^{2\xi}-b^2 \e^{2\nu}}} \,.
+    \label{eq:trajectory}
+    \end{equation}
+
+    \begin{figure}
+    \includegraphics<1>{figures/method/ray_tracing_0.pdf} % blank
+    \includegraphics<2>{figures/method/ray_tracing_1.pdf} % m=0
+    \includegraphics<3>{figures/method/ray_tracing_2.pdf} % m=0, m=1
+    \includegraphics<4>{figures/method/ray_tracing_3.pdf} % m=0, m=1, m=2
+    \includegraphics<5>{figures/method/ray_tracing_full.pdf} % all
+    \end{figure}
+\end{frame}
 
 \subsection{Dynamical Simpson-Visser spacetime}
 \begin{frame}{Dynamical Simpson-Visser spacetime}
@@ -272,8 +314,8 @@ Questions?
 
 \end{frame}
 
- \begin{frame}
-     \printbibliography
+ \begin{frame}[allowframebreaks]
+    \printbibliography
  \end{frame} 
 
 \end{document}

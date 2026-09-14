@@ -21,6 +21,7 @@ def make_directories():
         os.path.abspath(os.path.join(OUTPUT_DIR, "Hayward", "ray_tracing")),
         os.path.abspath(os.path.join(OUTPUT_DIR, "Hayward", "shadows")),
         os.path.abspath(os.path.join(OUTPUT_DIR, "Hayward", "transfer_function")),
+        os.path.abspath(os.path.join(OUTPUT_DIR, "method")),
     ]
     for dir in dirs:
         os.makedirs(dir, exist_ok=True)
@@ -606,13 +607,69 @@ def generate_Hayward():
     make_shadow_plot(bs_transfer_list, emission_model, Hayward_kwargs,
                     figsize=(width,width), savepath=savepath, y_range=None, Npixels=1.6e7)
 
+def generate_ray_tracing_method():
+    def f_Schwarzschild(r: float, dummy) -> float:
+        """Radial function g^{rr} of the Schwarzschild metric in units of M=1"""
+        return 1 - 2./r
+
+    def areal_radius2(r: float, dummy) -> float:
+        """Areal radius squared g^{theta theta} of the Schwarzschild in units of M=1"""
+        return r**2
+
+    # Dictionary codifying Schwarzschild metric and required params
+    Schwarzschild_kwargs = {
+        'r_phs': [3.,],         # Photon sphere at r=3M
+        'inner_edge': 2.,       # Inner edge of disk at horizon r=2M
+        'radial_fun': f_Schwarzschild,     # Above defined radial function
+        'radial_params': None,  # g_rr has no additional params
+        'areal': areal_radius2,        # Above defined areal radius squared
+        'areal_params': None,   # g_thth has no additional params
+    }
+
+    # Ray tracing
+    steps = (0.3,0.07,0.01)
+    width = my_width*0.48*2/3
+    b_crits = [np.sqrt(27),]
+    rings_Schwarzschild = find_rings_list(b_crits, Schwarzschild_kwargs)
+
+    bs_list = [
+        [],
+        {'inner': ('black', [2.,])},
+        {'inner': ('black', [2.,]), 
+         'direct': ('dodgerblue', [4.,])},
+        {'inner': ('black', [2.,]), 
+         'direct': ('dodgerblue', [4.,]),
+         'lensed': ('orange', [5.5,])},
+        {'inner': ('black', [2.,]),
+         'direct': ('dodgerblue', [4.,]),
+         'lensed': ('orange', [5.5,]),
+         'p_ring': ('red', [5.2,])},
+    ]
+    for i, bs in enumerate(bs_list):
+        savepath = os.path.abspath(os.path.join(OUTPUT_DIR, f"method/ray_tracing_{i}.pdf"))
+        make_geodesics_plot(bs, figsize=(width,width), savepath=savepath,
+                            **Schwarzschild_kwargs)
+    inner_shadow = compute_inner_shadow(0,10,**Schwarzschild_kwargs)
+    bs_direct, bs_lensed, bs_p_ring = compute_optimal_array_steps(
+        inner_shadow, 10, rings_Schwarzschild, steps, joint=False
+    )
+    bs = {
+        'inner_shadow': ('black', np.arange(0, inner_shadow, steps[0])),
+        'direct': ('dodgerblue', bs_direct),
+        'lensed': ('orange', bs_lensed),
+        'p_ring': ('red', bs_p_ring[~np.isin(bs_p_ring,b_crits)]), # We remove the value b_crit
+    }
+    savepath = os.path.abspath(os.path.join(OUTPUT_DIR, f"method/ray_tracing_full.pdf"))
+    make_geodesics_plot(bs, figsize=(width,width), savepath=savepath,
+                        **Schwarzschild_kwargs)
 
 # Generate all plots
 def main():
     make_directories()
-    generate_intensity_profiles()
-    generate_SV()
-    generate_Hayward()
+    generate_ray_tracing_method()
+    # generate_intensity_profiles()
+    # generate_SV()
+    # generate_Hayward()
 
 
 if __name__=='__main__':
