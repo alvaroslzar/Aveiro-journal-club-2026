@@ -44,7 +44,6 @@
 
 
 \begin{frame}
-    \footnotesize
     Based on 2608.15740 [gr-qc]
     \centering
     \includegraphics[width=\textwidth]{assets/snapshot.png}
@@ -60,9 +59,9 @@
 \begin{frame}{Motivation}
 
     The McVittie solution\footcite{McVittie:1933zz}
-    \begin{align*}
+    \begin{align}
     ds^2 = -\left( \frac{1-\frac{M}{2a(t)R}}{1+\frac{M}{2a(t)R}} \right)^2 dt^2 + \left( 1+\frac{M}{2a(t)R} \right)^4 a^2(t) \left\{ dR^2 +R^2\,d\Omega^2 \right\}
-    \end{align*}
+    \end{align}
     describes a massive object embedded in a FLRW Universe.
 
     \begin{itemize}
@@ -79,10 +78,10 @@
 \begin{frame}{Singularity problems}
     Indeed, this is a \textbf{rather universal phenomenon}, that is, the horizon embedding in a dynamical background becomes a naked singularity for a large class of models.
 
-    We consider the following form of the metric in the \textbf{dynamical} and \textbf{spherically symmetric spacetime}
-    \begin{align*}
-    ds^2 = - \e^{2\nu (t,r)} dt^2 + \e^{2\lambda (t,r)} dr^2 + \e^{2\xi (t,r)} \left( d\vartheta^2 + \sin^2\vartheta \, d\varphi^2 \right)\, , 
-    \end{align*}
+    We consider the following form of the metric a the \textbf{dynamical} and \textbf{spherically symmetric spacetime}
+    \begin{align}
+    ds^2 = - \e^{2\nu (t,r)}\, dt^2 + \e^{2\lambda (t,r)}\, dr^2 + \e^{2\xi (t,r)}\,d\Omega^2 , 
+    \end{align}
 
     \begin{itemize}
         \item<2-> At $\e^{2\nu (t,r)}=0$, we have the horizon(s).
@@ -104,32 +103,78 @@
         \underbrace{ \left\{\ddot\lambda + \left( \dot\lambda - \dot\nu \right) \dot\lambda \right\}}_{\text{vanish at }\e^{2\nu}=0} + 4 \e^{-2\nu} \underbrace{\left\{ \ddot\xi + \left(\dot\xi - \dot\nu \right) \dot \xi \right\}}_{\text{vanish at }\e^{2\nu}=0} + ...
         \end{align*}
     }
-
     \onslide<3->{
-        Then, we require
-        \begin{align*}
-        \ddot\lambda + \left( \dot\lambda - \dot\nu \right) \dot\lambda =&\, \Lambda_0 \left(t, r\right) \e^{2\nu}\, , \\
-        \ddot\xi + \left(\dot\xi - \dot\nu \right) \dot \xi =&\, \Xi_0 \left(t, r\right) \e^{2\nu}\,, 
-        \end{align*}
-        where $\Lambda_0\left(t, r\right)$ and $\Xi_0\left(t, r\right)$ are smooth.
+        We further require that:
+        \begin{itemize}
+            \item $\e^{2\lambda+2\nu}$ is neither singular nor vanishes at the horizon.
+
+            \item $\e^\xi$ is neither singular nor vanishes at the horizon.
+        \end{itemize}
+    }
+\end{frame}
+
+
+\begin{frame}
+    \onslide<1->{
+        Then, the metric functions can be calculated as
+        \begin{align}
+        \e^{\lambda (t,r)} =&\, \int^t dt_1 \e^{\nu\left(t_1, r\right)} \int^{t_1} dt_2 \Lambda \left(t_2, r\right)\, \\
+        \label{r4}
+        \e^{\xi (t,r)} =&\, \int^t dt_1 \e^{\nu\left(t_1, r\right)} \int^{t_1} dt_2 \Xi \left(t_2, r\right) \e^{\nu\left(t_2, r\right)} \,.
+        \end{align}
+    }
+    \onslide<2->{
+        Note that, for $\e^{\nu}=\e^{\nu (r)}$, the areal radius reads
+        \begin{align}
+        \label{xi1}
+        \e^{\xi\left(t,r\right)} = \Xi_1 (r) + \e^{2\nu(r)} \Xi_2(r,t)\, , \quad \Xi_2(r,t) \equiv \int^t dt_1 \int^{t_1} dt_2 \Xi \left(t_2, r\right) \, .
+        \end{align}
     }
 \end{frame}
 
 
 \subsection{Examples}
-\begin{frame}{Examples}
+\begin{frame}{Examples: Simpson-Visser black bounce}
+    We consider \textbf{exotic compact objects}, such as traversable wormholes and black holes with a throat.
+    \begin{itemize}
+        \item First, the time-dependent extension of the Simpson-Visser black bounce\footcite{Simpson:2018tsi}, whose metric is given by
+        \begin{align}
+        \e^{2\nu}=\e^{-2\lambda}= 1 - \frac{2M}{\sqrt{r^2 + {r_\mathrm{throat}}^2}}\, , \quad 
+        r\in (-\infty, \infty) .
+        \end{align}
+        Choosing the functions in \eqref{xi1} as $\Xi_1(r)=\sqrt{r^2+{\rt}^2}$ and $\Xi_2(t,r)=e^{-2\nu(r)}\Xi_{02}(t)$, we get the areal radius function
+        \begin{align}
+        \e^\xi = \sqrt{r^2+{\rt}^2}+\Xi_{02}(t)\,.
+        \end{align}
+    \end{itemize}
+\end{frame}
 
+
+\begin{frame}{Examples: Hayward-like wormhole}
+    \begin{itemize}
+        \item Next, we consider the time-dependent extension of the Hayward geometry\footcite{Hayward:2005gi}:
+        \begin{align}
+        \label{Hayward}
+        \e^{2\nu}=\e^{-2\lambda}=1 - \frac{2Mr^2}{\left|r\right|^3 + 2M\gamma^2} \, , \quad 
+        r\in (-\infty, \infty) .
+        \end{align}
+        Similarly, choosing the functions $\Xi_1(r)=\sqrt{r^2+{\rt}^2}$ and $\Xi_2(t,r)=e^{-2\nu(r)}\Xi_{02}(t)$  in \eqref{xi1}, the areal radius function reads
+        \begin{align}
+        \e^\xi = \sqrt{r^2+{\rt}^2}+\Xi_{02}(t)\,.
+        \end{align}
+    \end{itemize}
 \end{frame}
 
 
 \begin{frame}
-    Bottomline:
+    Bottom line:
     \begin{itemize}
         \item<1-> When we consider a black hole in a dynamical background, the horizon becomes a naked singularity for a large class of models.
 
         \item<2-> We give general prescriptions on how this can be avoided.
 
-        \item<3-> As examples, we construct the dynamical extensions of a Hayward-like wormhole and the Simpson-Visser black bounce.
+        \item<3-> As examples, we construct the dynamical extensions of the Simpson-Visser black bounce and a Hayward-like wormhole.
+        In these particular cases, only $\e^\xi$ depends on $t$.
     \end{itemize}
 \end{frame}
 
@@ -177,6 +222,36 @@ Questions?
 
 \begin{frame}[noframenumbering] % Blank slide
 \end{frame}
+
+
+\begin{frame}{Singularity problems}
+    The Ricci scalar:
+    \begin{align*}
+    R= 2 \e^{-2 \nu} \left\{\ddot\lambda + \left( \dot\lambda - \dot\nu \right) \dot\lambda \right\} + 4 \e^{-2\nu} \left\{ \ddot\xi + \left(\dot\xi - \dot\nu \right) \dot \xi \right\} + ...
+    \end{align*}
+
+    For the Ricci scalar to be regular, we require
+    \begin{align}
+    \ddot\lambda + \left( \dot\lambda - \dot\nu \right) \dot\lambda =&\, \Lambda_0 \left(t, r\right) \e^{2\nu}\, , \\
+    \ddot\xi + \left(\dot\xi - \dot\nu \right) \dot \xi =&\, \Xi_0 \left(t, r\right) \e^{2\nu}\,, 
+    \end{align}
+    where $\Lambda_0\left(t, r\right)$ and $\Xi_0\left(t, r\right)$ are smooth.
+\end{frame}
+
+
+\begin{frame}{Time-independent horizon}
+    \begin{itemize}
+        \item The metric function $\e^\lambda$ can be calculated as
+        \begin{align}
+        \e^{\lambda (t,r)} =&\, \int^t dt_1 \e^{\nu\left(t_1, r\right)} \int^{t_1} dt_2 \Lambda \left(t_2, r\right)\,.
+        \end{align}
+
+        \item $\e^\lambda$ is singular at $\e^\nu=0$, which is due to the integration ``constants" w.r.t. $t_1$ and $t_2$.
+        
+        \item Since those integration ``constants" are only functions of $r$, the horizon is time-independent.
+        \end{itemize}
+\end{frame}
+
 
 \begin{frame}[noframenumbering]{Two scalar fields model}
 
