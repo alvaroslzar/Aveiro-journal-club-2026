@@ -607,6 +607,33 @@ def generate_Hayward():
     make_shadow_plot(bs_transfer_list, emission_model, Hayward_kwargs,
                     figsize=(width,width), savepath=savepath, y_range=None, Npixels=1.6e7)
 
+def make_transfer_function_plot_ticks(b_crits, kwargs, bs_list,
+                                correction=0, figsize=(7,7), savepath=None):
+    fig, ax = plt.subplots(figsize=figsize)
+    for order, bs in enumerate(bs_list):
+        if order==0:
+            plot_transfer_function(ax, bs, order, correction, **kwargs)
+        else:
+            for bs_ring in to_list(bs):
+                plot_transfer_function(ax, bs_ring, order, correction, **kwargs)
+
+    xticks = [i for i in range(0,11,2)]
+    xticklabels = [f'{t}' for t in xticks]
+    xticks += b_crits
+    xticklabels += [r'$b_c$']
+
+    ax.set_xlabel(r'$b/M$')
+    ax.set_ylabel(r'$r_m/M$')
+    ax.set_xlim(0,10)
+    ax.set_xticks(xticks)
+    ax.set_xticklabels(xticklabels)
+    ax.set_ylim(0,15)
+    ax.set_yticks(np.arange(0,16,5))
+    
+    if savepath is not None:
+        plt.savefig(savepath)
+    plt.show()
+
 def generate_ray_tracing_method():
     def f_Schwarzschild(r: float, dummy) -> float:
         """Radial function g^{rr} of the Schwarzschild metric in units of M=1"""
@@ -625,13 +652,13 @@ def generate_ray_tracing_method():
         'areal': areal_radius2,        # Above defined areal radius squared
         'areal_params': None,   # g_thth has no additional params
     }
+    b_crits = [np.sqrt(27),]
+    rings_Schwarzschild = find_rings_list(b_crits, Schwarzschild_kwargs)
+
 
     # Ray tracing
     steps = (0.3,0.07,0.01)
     width = my_width*0.48*2/3
-    b_crits = [np.sqrt(27),]
-    rings_Schwarzschild = find_rings_list(b_crits, Schwarzschild_kwargs)
-
     bs_list = [
         [],
         {'inner': ('black', [2.,])},
@@ -662,6 +689,16 @@ def generate_ray_tracing_method():
     savepath = os.path.abspath(os.path.join(OUTPUT_DIR, f"method/ray_tracing_full.pdf"))
     make_geodesics_plot(bs, figsize=(width,width), savepath=savepath,
                         **Schwarzschild_kwargs)
+
+    # Transfer functions
+    width = my_width*0.48*2/3
+    bs_list = compute_optimal_array_Npoints(0,10, rings_Schwarzschild, Npoints=50, joint=False, fill=True)
+    for bs in bs_list:
+        bs = bs[~np.isin(bs,b_crits)]
+    savepath = os.path.abspath(os.path.join(OUTPUT_DIR, f"method/transfer_function.pdf"))
+    make_transfer_function_plot_ticks(b_crits, Schwarzschild_kwargs, bs_list,
+                                correction=0, figsize=(width*golden,width), savepath=savepath)
+
 
 # Generate all plots
 def main():
