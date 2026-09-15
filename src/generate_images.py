@@ -199,32 +199,32 @@ def generate_SV():
     #         make_transfer_function_plot(b_crits, SV_kwargs, bs_list,
     #                                     correction=0, figsize=(width,width), savepath=savepath)
 
-    # # Observed intensity and shadow
-    # y_range = (0,0.34)
-    # width = my_width*0.48*2/3
-    # figsize = (width,width)
-    # savepath = None
-    # bs = np.linspace(0,10*np.sqrt(2),1000)
-    # r_throats = [3/2,5/2]
-    # xi_ts = [-1,0,1]
-    # for r_throat in r_throats:
-    #     for xi_t in xi_ts:
-    #         b_crits = compute_b_crits_SV(xi_t)
-    #         SV_kwargs = get_SV_kwargs(r_throat, xi_t)
-    #         r_hor = SV_kwargs['inner_edge']
-    #         rings_SV = find_rings_list(b_crits, SV_kwargs)
-    #         bs_transfer_list = compute_optimal_array_Npoints(0,10*np.sqrt(2), rings_SV, Npoints=100, joint=False, fill=True)
-    #         params = (r_hor, 1/2, -2) # For small sigma it gives numerical error
-    #         emission_model = lambda r: normalized_Standard_Unbound(r, *params)
-    #         savepath = os.path.abspath(os.path.join(OUTPUT_DIR, f"SV/shadows/Observed_SV_r{int(r_throat)}_xi{round(xi_t)}.pdf"))
-    #         plot_observed_intensity(bs, bs_transfer_list, emission_model, SV_kwargs,
-    #                                 figsize, savepath=savepath, y_range=y_range)
+    # Observed intensity and shadow
+    y_range = (0,0.34)
+    width = my_width*0.48*2/3
+    figsize = (width,width)
+    savepath = None
+    bs = np.linspace(0,10*np.sqrt(2),1000)
+    r_throats = [3/2,5/2]
+    xi_ts = [-1,0,1]
+    for r_throat in r_throats:
+        for xi_t in xi_ts:
+            b_crits = compute_b_crits_SV(xi_t)
+            SV_kwargs = get_SV_kwargs(r_throat, xi_t)
+            r_hor = SV_kwargs['inner_edge']
+            rings_SV = find_rings_list(b_crits, SV_kwargs)
+            bs_transfer_list = compute_optimal_array_Npoints(0,10*np.sqrt(2), rings_SV, Npoints=100, joint=False, fill=True)
+            params = (r_hor, 1/2, -2) # For small sigma it gives numerical error
+            emission_model = lambda r: normalized_Standard_Unbound(r, *params)
+            savepath = os.path.abspath(os.path.join(OUTPUT_DIR, f"SV/shadows/Observed_SV_r{int(r_throat)}_xi{round(xi_t)}.pdf"))
+            plot_observed_intensity(bs, bs_transfer_list, emission_model, SV_kwargs,
+                                    figsize, savepath=savepath, y_range=y_range)
             
-    #         savepath = os.path.abspath(os.path.join(OUTPUT_DIR, f"SV/shadows/Sh_SV_r{int(r_throat)}_xi{round(xi_t)}.pdf"))
-    #         figsize = (width/1.05,width/1.05)
-    #         make_shadow_plot(bs_transfer_list, emission_model, SV_kwargs,
-    #                         figsize, savepath=savepath, y_range=y_range)
-    #         figsize = (width,width)
+            savepath = os.path.abspath(os.path.join(OUTPUT_DIR, f"SV/shadows/Sh_SV_r{int(r_throat)}_xi{round(xi_t)}.pdf"))
+            figsize = (width/1.05,width/1.05)
+            make_shadow_plot(bs_transfer_list, emission_model, SV_kwargs,
+                            figsize, savepath=savepath, y_range=y_range)
+            figsize = (width,width)
 
 
 ### Hayward ###
@@ -705,7 +705,7 @@ def generate_ray_tracing_method():
 def main():
     make_directories()
     # generate_ray_tracing_method()
-    generate_intensity_profiles()
+    # generate_intensity_profiles()
     generate_SV()
     # generate_Hayward()
 
