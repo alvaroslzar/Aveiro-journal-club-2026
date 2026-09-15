@@ -146,6 +146,7 @@
             \begin{align}
             \e^\xi = \sqrt{r^2+{\rt}^2}+\Xi_{02}(t)\,.
             \end{align}
+            For $r>0$, this geometry presents one event horizon at $r=\sqrt{4-{\rt}^2}$ when $\rt<2$.
         \end{itemize}
     }
 \end{frame}
@@ -200,16 +201,46 @@
         \e^{2\xi} k^\varphi = L\, .
         \end{align}
     }
-    \onslide<3->{
+\end{frame}
+
+
+\begin{frame}
+    \onslide<1->{
         Null geodesics only depend on their \textbf{impact parameter} $b=L/E$ and the \textbf{effective potential} $V(r)=e^{2\nu-2\xi}$
         \begin{align}
         \left(\frac{d r}{d\sigma}\right)^2 = \frac{1}{b^2} - V(r)\,.
         \end{align}
     }
+    \onslide<2->{
+        The (possibly several) maxima of the effective potential $V(r)$ are called \textbf{photon spheres} $\rp$, which define the so-called \textbf{critical impact parameters}
+        \begin{align}
+            b_c = \frac{1}{\sqrt{V(\rp)}}\,.
+        \end{align}
+        Geodesics approaching one of those $b_c$ will turn an arbitrarily large number of times around the compact object in unstable circular orbits.
+    }
 \end{frame}
 
 
-\begin{frame}{Ray-tracing method\footcite{Gralla:2019xty,Guerrero:2021ues}}
+\subsection{Ray-tracing method}
+\begin{frame}{Ray-tracing method}
+    We know simulate the shadow of the previous examples using the so-called \textbf{ray-tracing method}\footcite{Gralla:2019xty,Guerrero:2021ues}.
+
+    Assumptions and simplifications:
+    \begin{itemize}
+        \item<2-> The emission is only due to the accretion disk outside of the throat.
+
+        \item<3-> The accretion disk is both geometrically and optically thin.
+        
+        \item<4-> The disk is lying on the equatorial plane and it is observed from a \textbf{face on} view.
+        
+        \item<5-> The disk is \textbf{static}, that is, the redshift is only due to gravitational redshift.
+        
+        \item<6-> The emission is isotropic in the rest frame of the disk.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
     \begin{enumerate}
         \item[1.] Compute the trajectory of the geodesic.
     \end{enumerate}
@@ -217,7 +248,6 @@
     \frac{d\varphi}{dr} = \pm \frac{b\ \e^{-\xi}}{\sqrt{\e^{2\xi}-b^2 \e^{2\nu}}} \,.
     \label{eq:trajectory}
     \end{equation}
-
     \only<1>{
         \begin{figure}
         \includegraphics{figures/method/ray_tracing_0.pdf} % blank
