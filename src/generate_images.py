@@ -629,6 +629,7 @@ def make_transfer_function_plot_ticks(b_crits, kwargs, bs_list,
     ax.set_xticklabels(xticklabels)
     ax.set_ylim(0,15)
     ax.set_yticks(np.arange(0,16,5))
+    ax.legend(labels=[r'$m=1$',r'$m=2$',r'$m=3$'], loc='upper left')
     
     if savepath is not None:
         plt.savefig(savepath)
@@ -704,7 +705,7 @@ def generate_ray_tracing_method():
 def main():
     make_directories()
     generate_ray_tracing_method()
-    # generate_intensity_profiles()
+    generate_intensity_profiles()
     # generate_SV()
     # generate_Hayward()
 
