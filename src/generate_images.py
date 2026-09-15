@@ -235,7 +235,7 @@ def plot_potential_Hayward(ax, rr, f_Hayward, areal_radius2, gamma, xi_t, r_thro
         'areal': areal_radius2,
         'areal_params': (r_throat, xi_t)
     }
-    ax.plot(rr, potential(rr, **kwargs_potential), label=label, linestyle=linestyle)
+    ax.plot(rr, potential(rr, **kwargs_potential), label=label, linestyle=linestyle, linewidth=0.8)
     if plot_text:
         ax.text(-2.5, 4.5, s=rf'$\gamma={gamma:.1f}M$', fontsize=7)
 
