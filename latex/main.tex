@@ -293,6 +293,40 @@
     \end{figure}
 \end{frame}
 
+
+\begin{frame}
+    \begin{enumerate}
+        \item[3.]<1-> The disk emits with \textbf{specific intensity} $I^\mathrm{em}_\omega$ in its rest frame.
+        Since $I^\mathrm{em}_\omega/\omega^3$ is conserved\footnote{This may be derived from Liouville's theorem.} along any given geodesic
+        \begin{align}
+        I^\mathrm{ob}_{\omega'} = \left(\frac{\omega'}{\omega}\right)^3 I^\mathrm{em}_\omega = \e^{3\nu}I^\mathrm{em}_\omega \implies I^\mathrm{ob} = \int I^\mathrm{ob}_{\omega'} d\omega' = \e^{4\nu}I^\mathrm{em}\, .
+        \end{align}
+
+        \item[4.]<2-> The \textbf{observed intensity} profile is then the sum of all intersections with the disk
+        \begin{align}
+        I^\mathrm{ob}(b) = \sum_{m=1}^\infty \left. \e^{4\nu(r)}I^\mathrm{em}(r)\right|_{r=r_m(b)}\, .
+        \label{eq:observed-intensity}
+        \end{align}
+        We truncate the sum at $m=3$, since higher-order intersections contribute negligibly to the total intensity\footcite{Gralla:2019xty, Bisnovatyi-Kogan:2022ujt}.
+    \end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+    \begin{itemize}
+        \item[5.] To model the emission, we use the parametrised family of toy-models\footcite{Gralla:2020srx, Paugnat:2022qzy, Cardenas-Avendano:2022csp}
+        \begin{align}
+        I^\mathrm{em}(r;\mu,\sigma,\beta) = \frac{\exp \left( -\frac{1}{2}\left(\beta+\arcsinh\left(\frac{r-\mu}{\sigma}\right)\right)^2 \right)}{ \sqrt{(r-\mu)^2+\sigma^2} }\, .
+        \label{eq:su-model}
+        \end{align}
+    \end{itemize}
+
+    \begin{figure}
+        \includegraphics{figures/Emission_models.pdf}
+    \end{figure}
+\end{frame}
+
+
 \subsection{Dynamical Simpson-Visser spacetime}
 \begin{frame}{Dynamical Simpson-Visser spacetime}
 
