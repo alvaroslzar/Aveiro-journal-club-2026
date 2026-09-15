@@ -218,13 +218,31 @@
     \label{eq:trajectory}
     \end{equation}
 
-    \begin{figure}
-    \includegraphics<1>{figures/method/ray_tracing_0.pdf} % blank
-    \includegraphics<2>{figures/method/ray_tracing_1.pdf} % m=0
-    \includegraphics<3>{figures/method/ray_tracing_2.pdf} % m=0, m=1
-    \includegraphics<4>{figures/method/ray_tracing_3.pdf} % m=0, m=1, m=2
-    \includegraphics<5>{figures/method/ray_tracing_full.pdf} % all
-    \end{figure}
+    \only<1>{
+        \begin{figure}
+        \includegraphics{figures/method/ray_tracing_0.pdf} % blank
+        \end{figure}
+    }
+    \only<2>{
+        \begin{figure}
+        \includegraphics{figures/method/ray_tracing_1.pdf} % blank
+        \end{figure}
+    }
+    \only<3>{
+        \begin{figure}
+        \includegraphics{figures/method/ray_tracing_2.pdf} % blank
+        \end{figure}
+    }
+    \only<4>{
+        \begin{figure}
+        \includegraphics{figures/method/ray_tracing_3.pdf} % blank
+        \end{figure}
+    }
+    \only<5>{
+        \begin{figure}
+        \includegraphics{figures/method/ray_tracing_full.pdf} % blank
+        \end{figure}
+    }
 \end{frame}
 
 \subsection{Dynamical Simpson-Visser spacetime}
