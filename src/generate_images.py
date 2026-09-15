@@ -66,7 +66,7 @@ def generate_intensity_profiles():
     for label, mu in peaks.items():
         params = (mu, 1/2, -2) # For small sigma it gives numerical error
         emission_model = lambda r: normalized_Standard_Unbound(r, *params)
-        ax.plot(rs, emission_model(rs), label=label)
+        ax.plot(rs, emission_model(rs), label=label, linewidth=0.8)
     rmin = round(rs.min())
     rmax = round(rs.max())
     ax.set_xlabel(r'$r/M$')
@@ -88,7 +88,7 @@ def plot_potential_SV(ax, rr, f_SV, areal_radius2, r_throat, xi_t, label, linest
         'areal': areal_radius2,
         'areal_params': (r_throat, xi_t)
     }
-    ax.plot(rr, potential(rr, **kwargs_SV), label=label, linestyle=linestyle)
+    ax.plot(rr, potential(rr, **kwargs_SV), label=label, linestyle=linestyle, linewidth=0.8)
 
 def make_potential_plot_SV(rr, f_SV, areal_radius2, r_throats, xi_ts, linestyles,
                         figsize=(7,7), savepath=None):
@@ -100,11 +100,11 @@ def make_potential_plot_SV(rr, f_SV, areal_radius2, r_throats, xi_ts, linestyles
         plot_potential_SV(ax2, rr, f_SV, areal_radius2, r_throats[1], xi_t, None, linestyles[i])
 
     ax1.set_ylabel(r'$V(r)/M^2$')
-    ax1.text(-12, 0.08, s=r'$r_{\mathrm{throat}}=1.5M$')
-    ax2.text(-12, 0.08, s=r'$r_{\mathrm{throat}}=2.5M$')
+    ax1.text(-12, 0.11, s=r'$r_{\mathrm{throat}}=1.5M$')
+    ax2.text(-12, 0.11, s=r'$r_{\mathrm{throat}}=2.5M$')
     for ax in [ax1,ax2]:
         ax.set_xlim( int(rr.min()) , int(rr.max()) )
-        ax.set_ylim(0,0.1)
+        ax.set_ylim(0,0.13)
         ax.set_xlabel(r'$r/M$')
 
     handles, labels = ax1.get_legend_handles_labels()
@@ -149,82 +149,82 @@ def generate_SV():
         }
 
     # Potential
-    figsize = (my_width,my_width/3)
+    figsize = (my_width*0.6,my_width*0.26)
     savepath=None
     savepath = os.path.abspath(os.path.join(OUTPUT_DIR, "SV", "SV_potential.pdf"))
     rr = np.linspace(-14,14,200)
     r_throats = [3/2,5/2,]
     xi_ts = [-1,0,1]
-    linestyles = [ '--' , '-.' , '-' ]
+    linestyles = [ '-' , '-' , '-' ]
     make_potential_plot_SV(rr, f_SV, areal_radius2, r_throats, xi_ts, linestyles,
                         figsize=figsize, savepath=savepath)
 
-    # Ray tracing
-    steps = (0.3,0.07,0.01)
-    width = my_width*0.48*2/3
-    r_throats = [3/2,5/2]
-    xi_ts = [-1,0,1]
-    for r_throat in r_throats:
-        for xi_t in xi_ts:
-            b_crits = compute_b_crits_SV(xi_t) # Note that compute_b_crits_SV returns a list
-            SV_kwargs = get_SV_kwargs(r_throat, xi_t)
-            rings_SV = find_rings_list(b_crits, SV_kwargs)
+    # # Ray tracing
+    # steps = (0.3,0.07,0.01)
+    # width = my_width*0.48*2/3
+    # r_throats = [3/2,5/2]
+    # xi_ts = [-1,0,1]
+    # for r_throat in r_throats:
+    #     for xi_t in xi_ts:
+    #         b_crits = compute_b_crits_SV(xi_t) # Note that compute_b_crits_SV returns a list
+    #         SV_kwargs = get_SV_kwargs(r_throat, xi_t)
+    #         rings_SV = find_rings_list(b_crits, SV_kwargs)
 
-            inner_shadow = compute_inner_shadow(0,10,**SV_kwargs)
-            bs_direct, bs_lensed, bs_p_ring = compute_optimal_array_steps(inner_shadow, 10, rings_SV, steps, joint=False)
-            bs = {
-                'inner_shadow': ('black', np.arange(0, inner_shadow, steps[0])),
-                'direct': ('dodgerblue', bs_direct),
-                'lensed': ('orange', bs_lensed),
-                'p_ring': ('red', bs_p_ring[~np.isin(bs_p_ring,b_crits)]), # We remove the value b_crit
-            }
-            savepath = os.path.abspath(os.path.join(OUTPUT_DIR, f"SV/ray_tracing/RT_SV_r{int(r_throat)}_xi{round(xi_t)}.pdf"))
-            make_geodesics_plot(bs, figsize=(width,width), savepath=savepath,
-                                **SV_kwargs)
+    #         inner_shadow = compute_inner_shadow(0,10,**SV_kwargs)
+    #         bs_direct, bs_lensed, bs_p_ring = compute_optimal_array_steps(inner_shadow, 10, rings_SV, steps, joint=False)
+    #         bs = {
+    #             'inner_shadow': ('black', np.arange(0, inner_shadow, steps[0])),
+    #             'direct': ('dodgerblue', bs_direct),
+    #             'lensed': ('orange', bs_lensed),
+    #             'p_ring': ('red', bs_p_ring[~np.isin(bs_p_ring,b_crits)]), # We remove the value b_crit
+    #         }
+    #         savepath = os.path.abspath(os.path.join(OUTPUT_DIR, f"SV/ray_tracing/RT_SV_r{int(r_throat)}_xi{round(xi_t)}.pdf"))
+    #         make_geodesics_plot(bs, figsize=(width,width), savepath=savepath,
+    #                             **SV_kwargs)
 
-    # Transfer functions
-    width = my_width*0.48*2/3
-    r_throats = [3/2,5/2]
-    xi_ts = [-1,0,1]
-    for r_throat in r_throats:
-        for xi_t in xi_ts:
-            b_crits = compute_b_crits_SV(xi_t)
-            SV_kwargs = get_SV_kwargs(r_throat, xi_t)
-            rings_SV = find_rings_list(b_crits, SV_kwargs)
-            bs_list = compute_optimal_array_Npoints(0,10, rings_SV, Npoints=50, joint=False, fill=True)
-            for bs in bs_list:
-                bs = bs[~np.isin(bs,b_crits)]
+    # # Transfer functions
+    # width = my_width*0.48*2/3
+    # r_throats = [3/2,5/2]
+    # xi_ts = [-1,0,1]
+    # for r_throat in r_throats:
+    #     for xi_t in xi_ts:
+    #         b_crits = compute_b_crits_SV(xi_t)
+    #         SV_kwargs = get_SV_kwargs(r_throat, xi_t)
+    #         rings_SV = find_rings_list(b_crits, SV_kwargs)
+    #         bs_list = compute_optimal_array_Npoints(0,10, rings_SV, Npoints=50, joint=False, fill=True)
+    #         for bs in bs_list:
+    #             bs = bs[~np.isin(bs,b_crits)]
 
-            savepath = os.path.abspath(os.path.join(OUTPUT_DIR, f"SV/transfer_function/TF_SV_r{int(r_throat)}_xi{round(xi_t)}.pdf"))
-            make_transfer_function_plot(b_crits, SV_kwargs, bs_list,
-                                        correction=0, figsize=(width,width), savepath=savepath)
+    #         savepath = os.path.abspath(os.path.join(OUTPUT_DIR, f"SV/transfer_function/TF_SV_r{int(r_throat)}_xi{round(xi_t)}.pdf"))
+    #         make_transfer_function_plot(b_crits, SV_kwargs, bs_list,
+    #                                     correction=0, figsize=(width,width), savepath=savepath)
 
-    # Observed intensity and shadow
-    y_range = (0,0.34)
-    width = my_width*0.48*2/3
-    figsize = (width,width)
-    savepath = None
-    bs = np.linspace(0,10*np.sqrt(2),1000)
-    r_throats = [3/2,5/2]
-    xi_ts = [-1,0,1]
-    for r_throat in r_throats:
-        for xi_t in xi_ts:
-            b_crits = compute_b_crits_SV(xi_t)
-            SV_kwargs = get_SV_kwargs(r_throat, xi_t)
-            r_hor = SV_kwargs['inner_edge']
-            rings_SV = find_rings_list(b_crits, SV_kwargs)
-            bs_transfer_list = compute_optimal_array_Npoints(0,10*np.sqrt(2), rings_SV, Npoints=100, joint=False, fill=True)
-            params = (r_hor, 1/2, -2) # For small sigma it gives numerical error
-            emission_model = lambda r: normalized_Standard_Unbound(r, *params)
-            savepath = os.path.abspath(os.path.join(OUTPUT_DIR, f"SV/shadows/Observed_SV_r{int(r_throat)}_xi{round(xi_t)}.pdf"))
-            plot_observed_intensity(bs, bs_transfer_list, emission_model, SV_kwargs,
-                                    figsize, savepath=savepath, y_range=y_range)
+    # # Observed intensity and shadow
+    # y_range = (0,0.34)
+    # width = my_width*0.48*2/3
+    # figsize = (width,width)
+    # savepath = None
+    # bs = np.linspace(0,10*np.sqrt(2),1000)
+    # r_throats = [3/2,5/2]
+    # xi_ts = [-1,0,1]
+    # for r_throat in r_throats:
+    #     for xi_t in xi_ts:
+    #         b_crits = compute_b_crits_SV(xi_t)
+    #         SV_kwargs = get_SV_kwargs(r_throat, xi_t)
+    #         r_hor = SV_kwargs['inner_edge']
+    #         rings_SV = find_rings_list(b_crits, SV_kwargs)
+    #         bs_transfer_list = compute_optimal_array_Npoints(0,10*np.sqrt(2), rings_SV, Npoints=100, joint=False, fill=True)
+    #         params = (r_hor, 1/2, -2) # For small sigma it gives numerical error
+    #         emission_model = lambda r: normalized_Standard_Unbound(r, *params)
+    #         savepath = os.path.abspath(os.path.join(OUTPUT_DIR, f"SV/shadows/Observed_SV_r{int(r_throat)}_xi{round(xi_t)}.pdf"))
+    #         plot_observed_intensity(bs, bs_transfer_list, emission_model, SV_kwargs,
+    #                                 figsize, savepath=savepath, y_range=y_range)
             
-            savepath = os.path.abspath(os.path.join(OUTPUT_DIR, f"SV/shadows/Sh_SV_r{int(r_throat)}_xi{round(xi_t)}.pdf"))
-            figsize = (width/1.05,width/1.05)
-            make_shadow_plot(bs_transfer_list, emission_model, SV_kwargs,
-                            figsize, savepath=savepath, y_range=y_range)
-            figsize = (width,width)
+    #         savepath = os.path.abspath(os.path.join(OUTPUT_DIR, f"SV/shadows/Sh_SV_r{int(r_throat)}_xi{round(xi_t)}.pdf"))
+    #         figsize = (width/1.05,width/1.05)
+    #         make_shadow_plot(bs_transfer_list, emission_model, SV_kwargs,
+    #                         figsize, savepath=savepath, y_range=y_range)
+    #         figsize = (width,width)
 
 
 ### Hayward ###
@@ -704,9 +704,9 @@ def generate_ray_tracing_method():
 # Generate all plots
 def main():
     make_directories()
-    generate_ray_tracing_method()
+    # generate_ray_tracing_method()
     generate_intensity_profiles()
-    # generate_SV()
+    generate_SV()
     # generate_Hayward()
 
 
