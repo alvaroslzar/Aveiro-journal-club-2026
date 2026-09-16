@@ -13,6 +13,7 @@ latex/figures/*
 *.synctex.gz
 *.run.xml
 *.pdf
+!/ASC_Aveiro_journal_club.pdf
 *.dvi
 *.nav
 *.snm
