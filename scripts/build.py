@@ -61,8 +61,13 @@ def main():
     aux_path = latex_dir / "main.aux"
     aux_text = aux_path.read_text(encoding="utf-8", errors="replace") if aux_path.exists() else ""
     commands = []
-    if r"\bibdata{" in aux_text:
+
+    # Select the bibliography tool only when the first LaTeX pass requests it.
+    if (latex_dir / "main.bcf").exists():
+        commands.append(["biber", "main"])
+    elif r"\bibdata{" in aux_text:
         commands.append(["bibtex", "main"])
+
     commands.extend([latex_cmd, latex_cmd])
 
     for cmd in commands:
