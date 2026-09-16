@@ -14,13 +14,9 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 def make_directories():
     dirs = [
         os.path.abspath(os.path.join(OUTPUT_DIR, "SV")),
-        os.path.abspath(os.path.join(OUTPUT_DIR, "SV", "ray_tracing")),
         os.path.abspath(os.path.join(OUTPUT_DIR, "SV", "shadows")),
-        os.path.abspath(os.path.join(OUTPUT_DIR, "SV", "transfer_function")),
         os.path.abspath(os.path.join(OUTPUT_DIR, "Hayward")),
-        os.path.abspath(os.path.join(OUTPUT_DIR, "Hayward", "ray_tracing")),
         os.path.abspath(os.path.join(OUTPUT_DIR, "Hayward", "shadows")),
-        os.path.abspath(os.path.join(OUTPUT_DIR, "Hayward", "transfer_function")),
         os.path.abspath(os.path.join(OUTPUT_DIR, "method")),
     ]
     for dir in dirs:
@@ -158,46 +154,6 @@ def generate_SV():
     make_potential_plot_SV(rr, f_SV, areal_radius2, r_throats, xi_ts, linestyles,
                         figsize=figsize, savepath=savepath)
 
-    # # Ray tracing
-    # steps = (0.3,0.07,0.01)
-    # width = my_width*0.48*2/3
-    # r_throats = [3/2,5/2]
-    # xi_ts = [-1,0,1]
-    # for r_throat in r_throats:
-    #     for xi_t in xi_ts:
-    #         b_crits = compute_b_crits_SV(xi_t) # Note that compute_b_crits_SV returns a list
-    #         SV_kwargs = get_SV_kwargs(r_throat, xi_t)
-    #         rings_SV = find_rings_list(b_crits, SV_kwargs)
-
-    #         inner_shadow = compute_inner_shadow(0,10,**SV_kwargs)
-    #         bs_direct, bs_lensed, bs_p_ring = compute_optimal_array_steps(inner_shadow, 10, rings_SV, steps, joint=False)
-    #         bs = {
-    #             'inner_shadow': ('black', np.arange(0, inner_shadow, steps[0])),
-    #             'direct': ('dodgerblue', bs_direct),
-    #             'lensed': ('orange', bs_lensed),
-    #             'p_ring': ('red', bs_p_ring[~np.isin(bs_p_ring,b_crits)]), # We remove the value b_crit
-    #         }
-    #         savepath = os.path.abspath(os.path.join(OUTPUT_DIR, f"SV/ray_tracing/RT_SV_r{int(r_throat)}_xi{round(xi_t)}.pdf"))
-    #         make_geodesics_plot(bs, figsize=(width,width), savepath=savepath,
-    #                             **SV_kwargs)
-
-    # # Transfer functions
-    # width = my_width*0.48*2/3
-    # r_throats = [3/2,5/2]
-    # xi_ts = [-1,0,1]
-    # for r_throat in r_throats:
-    #     for xi_t in xi_ts:
-    #         b_crits = compute_b_crits_SV(xi_t)
-    #         SV_kwargs = get_SV_kwargs(r_throat, xi_t)
-    #         rings_SV = find_rings_list(b_crits, SV_kwargs)
-    #         bs_list = compute_optimal_array_Npoints(0,10, rings_SV, Npoints=50, joint=False, fill=True)
-    #         for bs in bs_list:
-    #             bs = bs[~np.isin(bs,b_crits)]
-
-    #         savepath = os.path.abspath(os.path.join(OUTPUT_DIR, f"SV/transfer_function/TF_SV_r{int(r_throat)}_xi{round(xi_t)}.pdf"))
-    #         make_transfer_function_plot(b_crits, SV_kwargs, bs_list,
-    #                                     correction=0, figsize=(width,width), savepath=savepath)
-
     # Observed intensity and shadow
     y_range = (0,0.34)
     width = my_width*0.48*2/3
@@ -331,155 +287,7 @@ def generate_Hayward():
     linestyles = [ '-' , '-' , '-' ]
     make_potential_plot_Hayward(rr, f_Hayward, areal_radius2, gammas, xi_ts, r_throat, linestyles,
                                 figsize=figsize, savepath=savepath, plot_text=False)
-
-    # Ray-tracing
-    width = my_width*0.48*2/3
-    r_throat = 3/2
-
-#     ##############
-#     gamma = 0.5
-#     xi_ts = [-1,0,1]
-
-#     for xi_t in xi_ts:
-#         Hayward_kwargs = get_Hayward_kwargs(gamma, r_throat, xi_t)
-#         b_crits = compute_b_crits_Hayward(gamma, r_throat, xi_t)
-#         rings_Hayward = find_rings_list(b_crits, Hayward_kwargs)
-#         steps = (0.3,0.07,0.01)
-#         inner_shadow = compute_inner_shadow(0,10,**Hayward_kwargs)
-#         bs_direct, bs_lensed, bs_p_ring = compute_optimal_array_steps(inner_shadow, 10, rings_Hayward, steps, joint=False)
-#         bs = {
-#             'inner_shadow': ('black', np.arange(0, inner_shadow, steps[0])),
-#             'direct': ('dodgerblue', bs_direct),
-#             'lensed': ('orange', bs_lensed),
-#             'p_ring': ('red', bs_p_ring[~np.isin(bs_p_ring,b_crits)]), # We remove the value b_crit
-#         }
-#         savepath = os.path.abspath(os.path.join(OUTPUT_DIR, "Hayward", "ray_tracing", f"RT_Hayward_g{int(gamma)}_xi{round(xi_t)}.pdf"))
-#         make_geodesics_plot(bs, figsize=(width,width), savepath=savepath,
-#                             **Hayward_kwargs)
-
-#     ##############
-#     gamma = 1
-#     xi_t = -1
-
-#     Hayward_kwargs = get_Hayward_kwargs(gamma, r_throat, xi_t)
-#     b_crits = compute_b_crits_Hayward(gamma, r_throat, xi_t)
-#     rings_Hayward = find_rings_list(b_crits, Hayward_kwargs)
-#     steps = (0.3,0.1,0.1)
-#     inner_shadow = compute_inner_shadow(0,10,**Hayward_kwargs)
-#     bs_direct, bs_lensed, bs_p_ring = compute_optimal_array_steps(inner_shadow, 10, rings_Hayward, steps, joint=False)
-#     bc1 = b_crits[0]
-#     bs_inner = np.arange(bc1-1e-1, bc1+1e-1, 0.01)
-#     bs_p_ring = np.append(bs_p_ring,bs_inner)
-#     bs_p_ring = bs_p_ring[~np.isin(bs_p_ring,b_crits)]  # We remove the value b_crit
-#     bs = {
-#         'inner_shadow': ('black', np.arange(0, inner_shadow, steps[1])),
-#         'direct': (None, bs_direct),
-#         'lensed': (None, bs_lensed),
-#         'p_ring': (None, bs_p_ring[~np.isin(bs_p_ring,b_crits)]),
-#     }
-#     savepath = os.path.abspath(os.path.join(OUTPUT_DIR, "Hayward", "ray_tracing", f"RT_Hayward_g{int(gamma)}_xi{round(xi_t)}.pdf"))
-#     make_geodesics_plot(bs, figsize=(width,width), savepath=savepath,
-#                         **Hayward_kwargs)
-
-#     ##############
-#     gamma = 1
-#     xi_t = 0
-
-#     Hayward_kwargs = get_Hayward_kwargs(gamma, r_throat, xi_t)
-#     b_crits = compute_b_crits_Hayward(gamma, r_throat, xi_t)
-#     rings_Hayward = find_rings_list(b_crits, Hayward_kwargs)
-#     steps = (0.3,0.1,0.1)
-#     inner_shadow = compute_inner_shadow(0,10,**Hayward_kwargs)
-#     bs_direct, bs_lensed, bs_p_ring = compute_optimal_array_steps(inner_shadow, 10, rings_Hayward, steps, joint=False)
-#     bs_p_ring = bs_p_ring[~np.isin(bs_p_ring,b_crits)]  # We remove the value b_crit
-#     bs = {
-#         'inner_shadow': ('black', np.arange(0, inner_shadow, steps[0])),
-#         'direct': (None, bs_direct),
-#         'lensed': (None, bs_lensed),
-#         'p_ring': (None, bs_p_ring[~np.isin(bs_p_ring,b_crits)]),
-#     }
-#     savepath = os.path.abspath(os.path.join(OUTPUT_DIR, "Hayward", "ray_tracing", f"RT_Hayward_g{int(gamma)}_xi{round(xi_t)}.pdf"))
-#     make_geodesics_plot(bs, figsize=(width,width), savepath=savepath,
-#                         **Hayward_kwargs)
-        
-#     # ##############
-#     gamma = 1
-#     xi_t = 1
-
-#     Hayward_kwargs = get_Hayward_kwargs(gamma, r_throat, xi_t)
-#     b_crits = compute_b_crits_Hayward(gamma, r_throat, xi_t)
-#     # We manually add bs for the inner critical impact parameter (bc1)
-#     bc1 = b_crits[0]
-#     bs_inner_p_ring = np.arange(bc1-1e-7, bc1+1e-6, 2e-7)
-#     bs_inner_lensed = np.arange(bc1-1e-3, bc1+8e-3, 2e-3)
-#     bs_inner = np.concat([bs_inner_lensed,bs_inner_p_ring])
-#     # bs for the outer one
-#     b_crits = b_crits[1:]
-#     rings_Hayward = find_rings_list(b_crits, Hayward_kwargs)
-#     steps = (0.3,0.1,0.1)
-#     inner_shadow = compute_inner_shadow(0,10,**Hayward_kwargs)
-#     bs_direct, bs_lensed, bs_p_ring = compute_optimal_array_steps(inner_shadow, 10, rings_Hayward, steps, joint=False)
-#     bs_p_ring = np.append(bs_p_ring,bs_inner)
-#     bs_p_ring = bs_p_ring[~np.isin(bs_p_ring,b_crits)]  # We remove the value b_crit
-#     bs = {
-#         'inner_shadow': ('black', np.arange(0, inner_shadow, steps[0])),
-#         'direct': (None, bs_direct),
-#         'lensed': (None, bs_lensed),
-#         'p_ring': (None, bs_p_ring[~np.isin(bs_p_ring,b_crits)]),
-#     }
-#     savepath = os.path.abspath(os.path.join(OUTPUT_DIR, "Hayward", "ray_tracing", f"RT_Hayward_g{int(gamma)}_xi{round(xi_t)}.pdf"))
-#     make_geodesics_plot(bs, figsize=(width,width), savepath=savepath,
-#                         **Hayward_kwargs)
-
-#     # Transfer functions
-#     width = my_width*0.48*2/3
-#     r_throat = 3/2
-
-#     ##############
-#     gamma = 0.5
-#     xi_ts = [-1,0,1]
-#     for xi_t in xi_ts:
-#         Hayward_kwargs = get_Hayward_kwargs(gamma, r_throat, xi_t)
-#         b_crits = compute_b_crits_Hayward(gamma, r_throat, xi_t)
-#         rings_Hayward = find_rings_list(b_crits, Hayward_kwargs)
-#         bs_list = compute_optimal_array_Npoints(0, 10, rings_Hayward,
-#                                                 Npoints=100, joint=False, fill=True)
-#         savepath = os.path.abspath(os.path.join(OUTPUT_DIR, "Hayward", "transfer_function", f"TF_Hayward_g{int(gamma)}_xi{round(xi_t)}.pdf"))
-#         make_transfer_function_plot(b_crits, Hayward_kwargs, bs_list,
-#                                     figsize=(width,width), savepath=savepath)
-        
-#     ##############
-#     gamma = 1
-#     xi_ts = [-1, 0]
-#     for xi_t in xi_ts:
-#         Hayward_kwargs = get_Hayward_kwargs(gamma, r_throat, xi_t)
-#         b_crits = compute_b_crits_Hayward(gamma, r_throat, xi_t)
-#         rings_Hayward = find_rings_list(b_crits, Hayward_kwargs)
-#         Npoints = 100 if xi_t==0 else 500
-#         bs_list = compute_optimal_array_Npoints(0, 10, rings_Hayward,
-#                                                 Npoints=Npoints, joint=False, fill=True)
-#         savepath = os.path.abspath(os.path.join(OUTPUT_DIR, "Hayward", "transfer_function", f"TF_Hayward_g{int(gamma)}_xi{round(xi_t)}.pdf"))
-#         make_transfer_function_plot(b_crits, Hayward_kwargs, bs_list,
-#                                     figsize=(width,width), savepath=savepath)
-
-#     ##############
-#     gamma = 1
-#     xi_t = 1
-#     Hayward_kwargs = get_Hayward_kwargs(gamma, r_throat, xi_t)
-#     b_crits = compute_b_crits_Hayward(gamma, r_throat, xi_t)
-#     # We manually add bs for the inner critical impact parameter (bc1)
-#     bc1 = b_crits[0]
-#     bs_inner_lensed = np.linspace(bc1-1e-2, bc1+1e-2, 100)
-#     bs_inner_p_ring = np.linspace(bc1-1e-4, bc1+1e-4, 500)
-#     # bs for the outer one
-#     b_crits = b_crits[1:]
-#     rings_Hayward = find_rings_list(b_crits, Hayward_kwargs)
-#     [bs_direct, bs_lensed, bs_p_ring] = compute_optimal_array_Npoints(0, 10, rings_Hayward,
-#                                                                     Npoints=100, joint=False, fill=True)
-#     bs_list = [ bs_direct, [bs_inner_lensed, bs_lensed], [bs_inner_p_ring, bs_p_ring] ]
-#     savepath = os.path.abspath(os.path.join(OUTPUT_DIR, "Hayward", "transfer_function", f"TF_Hayward_g{int(gamma)}_xi{round(xi_t)}.pdf"))
-#     make_transfer_function_plot(b_crits, Hayward_kwargs, bs_list,
-#                                 figsize=(width,width), savepath=savepath)
+    plt.close()
 
     # Observed intensity
     width = my_width*0.48*2/3
@@ -500,7 +308,8 @@ def generate_Hayward():
         bs = np.linspace(0,10*np.sqrt(2),1000)
         plot_observed_intensity(bs, bs_transfer_list, emission_model, Hayward_kwargs,
                                 figsize=(width,width), savepath=savepath)
-        
+        plt.close()
+
     ##############
     gamma = 1
     xi_ts = [-1,0]
@@ -517,7 +326,8 @@ def generate_Hayward():
         bs = np.linspace(0,10*np.sqrt(2),1000)
         plot_observed_intensity(bs, bs_transfer_list, emission_model, Hayward_kwargs,
                                 figsize=(width,width), savepath=savepath)
-        
+        plt.close()
+
     ##############
     gamma = 1
     xi_t = 1
@@ -545,6 +355,7 @@ def generate_Hayward():
     bs.sort()
     plot_observed_intensity(bs, bs_transfer_list, emission_model, Hayward_kwargs,
                             figsize=(width,width), savepath=savepath)
+    plt.close()
 
     # Shadows
     width = my_width*0.48*2/3
@@ -565,7 +376,8 @@ def generate_Hayward():
         savepath = os.path.abspath(os.path.join(OUTPUT_DIR, "Hayward", "shadows", f"Sh_Hayward_g{int(gamma)}_xi{round(xi_t)}.pdf"))
         make_shadow_plot(bs_transfer_list, emission_model, Hayward_kwargs,
                         figsize=(width,width), savepath=savepath, y_range=None, Npixels=1.6e7)
-        
+        plt.close()
+
     ##############
     gamma = 1
     xi_ts = [-1,0]
@@ -580,6 +392,7 @@ def generate_Hayward():
         savepath = os.path.abspath(os.path.join(OUTPUT_DIR, "Hayward", "shadows", f"Sh_Hayward_g{int(gamma)}_xi{round(xi_t)}.pdf"))
         make_shadow_plot(bs_transfer_list, emission_model, Hayward_kwargs,
                         figsize=(width,width), savepath=savepath, y_range=None, Npixels=1.6e7)
+        plt.close()
 
     ##############
     gamma = 1
@@ -703,9 +516,13 @@ def generate_ray_tracing_method():
 def main():
     make_directories()
     generate_ray_tracing_method()
+    plt.close('all')
     generate_intensity_profiles()
+    plt.close('all')
     generate_SV()
+    plt.close('all')
     generate_Hayward()
+    plt.close('all')
 
 
 if __name__=='__main__':

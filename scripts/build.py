@@ -27,6 +27,7 @@ def install_deps(requirements_path):
     try:
         import numpy  # noqa: F401
         import matplotlib  # noqa: F401
+        import gravityp  # noqa: F401
     except ImportError:
         print("Installing dependencies from requirements.txt...")
         subprocess.run([sys.executable, "-m", "pip", "install", "-r",
