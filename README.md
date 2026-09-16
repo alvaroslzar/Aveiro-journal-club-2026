@@ -25,7 +25,6 @@ Create a virtual environment and install the dependencies (macOS/Linux):
 python3 -m venv .venv
 source .venv/bin/activate
 pip3 install -r requirements.txt
-bash scripts/setup-nb-filter.sh
 ```
 
 ### Every time after
