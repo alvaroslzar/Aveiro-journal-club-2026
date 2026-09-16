@@ -8,11 +8,14 @@ https://github.com/alvaroslzar
 
 # Aveiro journal club 2026
 
-This is the repo for the project `Aveiro-journal-club-2026`
+This repository contains the TEX source and Python scripts for the presentation given at the [journal club](https://gravitation.web.ua.pt/node/5700) on September 16, 2026 at University of Aveiro.
+See [here](/ASC_Aveiro_journal_club.pdf) the PDF with the slides.
 
-Authors: S. Noriji, S. D. Odintsov, D. Sáez-Chillón Gómez and Á. Salazar Cuadros (speaker).
+Speaker: Álvaro Salazar Cuadros
 
-Contribution: Horizon singularity, energy conditions and shadows in time-dependent and spherically symmetric spacetime [	arXiv:2608.15740 [gr-qc]](https://arxiv.org/abs/2608.15740).
+Authors: Shin’ichi Nojiri, Sergei D. Odintsov, Diego Sáez-Chillón Gómez, Álvaro Salazar Cuadros.
+
+Paper: Horizon singularity, energy conditions and shadows in time-dependent and spherically symmetric spacetime [arXiv:2608.15740 [gr-qc]](https://arxiv.org/abs/2608.15740).
 
 
 ## Setup
