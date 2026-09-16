@@ -72,7 +72,7 @@ def main():
 
     for ext in [
         '.aux', '.log', '.out', '.toc', '.lot', '.lof', '.nav', '.snm',
-        '.fls', '.blg', '.fdb_latexmk', '.bbl', '.synctex.gz'
+        '.fls', '.blg', '.fdb_latexmk', '.bbl', '.synctex.gz', '.bcf', '.run.xml'
     ]:
         (latex_dir / f"main{ext}").unlink(missing_ok=True)
 

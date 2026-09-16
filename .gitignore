@@ -17,6 +17,7 @@ latex/figures/*
 *.dvi
 *.nav
 *.snm
+*.bcf
 
 # macOS
 .DS_Store
